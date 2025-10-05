@@ -8,7 +8,13 @@ describe('Cadastrar usuário UseCase', function(){
         register: jest.fn()
     }
 
+    // Triplo AAA
+    // Arrange (Preparação)
+    // Act (Ação)
+    // Assert (Afirmação)
+
     test('Deve cadastrar um usuário', async function(){
+        // Arrange
         const userDTO = {
             name: 'Patrick Reis Andrade',
             CPF: 5555,
@@ -17,7 +23,10 @@ describe('Cadastrar usuário UseCase', function(){
             email: 'andrade.patrick@gmail.com'
         }
 
+        // Act
         const sutRegisterUserUseCase = registerUserUseCase({ userRepository })
+
+        // Assert
         const output = await sutRegisterUserUseCase(userDTO)
 
         expect(output).toBeUndefined()
