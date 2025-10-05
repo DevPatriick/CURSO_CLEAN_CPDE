@@ -1,3 +1,4 @@
+const registerUserUsecase = require('./register-user.usecase')
 const registerUserUseCase = require('./register-user.usecase')
 
 describe('Cadastrar usuário UseCase', function(){
@@ -25,5 +26,11 @@ describe('Cadastrar usuário UseCase', function(){
 
         // Garante que a função foi chamada apenas uma vez
         expect(userRepository.register).toHaveBeenCalledTimes(1)
+    })
+
+    test('Deve retornar um throw AppError se o userRepository não for fornecido', function (){
+        expect(()=> {
+            registerUserUsecase({})
+        }).toThrow('userRepository não fornecido')
     })
 })
