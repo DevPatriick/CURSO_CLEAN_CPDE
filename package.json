@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/DevPatriick/CURSO_CLEAN_CPDE/issues"
   },
-  "homepage": "https://github.com/DevPatriick/CURSO_CLEAN_CPDE#readme"
+  "homepage": "https://github.com/DevPatriick/CURSO_CLEAN_CPDE#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
 }
