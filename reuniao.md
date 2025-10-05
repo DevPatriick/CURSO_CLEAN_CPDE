@@ -8,4 +8,21 @@
 - Empréstimo: [usuario_id, livro_id, data_retorno, data_devolucao, data_saida]
 
 ## UseCases (Regras de negócios)
-- 
+[] Cadastrar um novo usuário
+    -> CPF ou email devem ser únicos
+[] Buscar um cadastro de usuário por CPF
+    -> Retornar um usuário ou vazio
+[] Cadastrar um novo livro
+    -> ISBN deve ser único
+[] Buscar um livro por nome ou ISBN
+    -> Retornar os livros ou vazio
+[] Emprestar um livro ao usuario
+    -> A data de retorno não pode ser menor que a data de saída
+    -> Um usuário não pode estar com mais de um livro com o mesmo ISBN
+    -> Um usuário pode estar com mais de um livro com ISBN diferentes ao mesmo tempo
+    -> Ao cadastrar um empréstimo, será enviado um email automaticamente informando o nome do livro, nome do usuário, CPF, a data de saída e a data de retorno
+
+[] Devolver um livro
+    -> Caso o usuário tenha atrasado, será gerada uma multa fixa de R$ 10,00
+
+[] Mostrar todos os empréstimos pendentes, com o nome do livro, nome do usuário, CPF, data de saída e data de retorno. Ordenados pela data de retorno mais antigo
