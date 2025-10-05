@@ -1,3 +1,4 @@
+const AppError = require('../shared/errors/AppError')
 const registerUserUsecase = require('./register-user.usecase')
 const registerUserUseCase = require('./register-user.usecase')
 
@@ -31,6 +32,6 @@ describe('Cadastrar usuário UseCase', function(){
     test('Deve retornar um throw AppError se o userRepository não for fornecido', function (){
         expect(()=> {
             registerUserUsecase({})
-        }).toThrow('userRepository não fornecido')
+        }).toThrow(new AppError(AppError.dependecy))
     })
 })
