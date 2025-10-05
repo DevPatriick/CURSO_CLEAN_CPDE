@@ -1,4 +1,4 @@
-module.export = function registerUserUseCase() {
+module.exports = function registerUserUseCase({ userRepository }) {
   return async function ({ name, CPF, phone, address, email }) {
     await userRepository.register({
       name,
