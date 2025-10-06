@@ -8,7 +8,7 @@
 - Empréstimo: [usuario_id, livro_id, data_retorno, data_devolucao, data_saida]
 
 ## UseCases (Regras de negócios)
-[] Cadastrar um novo usuário
+[X] Cadastrar um novo usuário
     -> CPF ou email devem ser únicos
 [] Buscar um cadastro de usuário por CPF
     -> Retornar um usuário ou vazio
@@ -28,4 +28,6 @@
 [] Mostrar todos os empréstimos pendentes, com o nome do livro, nome do usuário, CPF, data de saída e data de retorno. Ordenados pela data de retorno mais antigo
 
 ## Usuarios Repository
-[] Cadastrar: [{name, CPF, phone, address, email}] => Promise<void>
+[X] Cadastrar: [{name, CPF, phone, address, email}] => Promise<void>
+[X] userExistByCPF(CPF) => Promise<void>
+[X] userExistByEmail(Email) => Promise<void>
