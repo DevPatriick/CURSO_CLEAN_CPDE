@@ -1,4 +1,4 @@
-const AppError = require('../shared/errors/AppError')
+const { Either, AppError } = require('../shared/errors')
 const registerUserUsecase = require('./register-user.usecase')
 const registerUserUseCase = require('./register-user.usecase')
 
@@ -31,7 +31,7 @@ describe('Cadastrar usuário UseCase', function(){
         // Assert
         const output = await sutRegisterUserUseCase(userDTO)
 
-        expect(output).toBeUndefined()
+        expect(output.right).toBeNull()
 
         // Espera que a informação passada para o register seja a mesma que user DTO
         expect(userRepository.register).toHaveBeenCalledWith(userDTO)
@@ -79,7 +79,7 @@ describe('Cadastrar usuário UseCase', function(){
 
     test('Deve retornar um throw AppErro CPF já cadastrado', async function(){
         userRepository.getUserByCPF.mockResolvedValue(true)
-         userRepository.getUserByEmail.mockResolvedValue(false)
+        userRepository.getUserByEmail.mockResolvedValue(false)
         const userDTO = {
             name: 'Patrick Reis Andrade',
             CPF: 55555555555,
@@ -89,7 +89,15 @@ describe('Cadastrar usuário UseCase', function(){
         }
 
         const sut = registerUserUseCase({ userRepository })
-        await expect(() => sut(userDTO)).rejects.toThrow(new AppError(AppError.userExistByCPF))
+        const output = await sut(userDTO)
+        expect(output.right).toBeNull()
+        expect(output.left).toEqual(Either.userExist('CPF'))
+        // Verifica se já existe
+        expect(userRepository.getUserByCPF).toHaveBeenLastCalledWith(userDTO.CPF)
+        // Se foi apenas uma vez
+        expect(userRepository.getUserByCPF).toHaveBeenCalledTimes(1)
+
+        // toHaveBeenLastCalledWith é um matcher do Jest usado para testar funções mock (ou spies) e verificar com quais argumentos a função foi chamada na última vez.
     })
 
     test('Deve retornar um throw AppErro email já cadastrado', async function(){
@@ -104,7 +112,12 @@ describe('Cadastrar usuário UseCase', function(){
         }
 
         const sut = registerUserUseCase({ userRepository })
-        await expect(() => sut(userDTO)).rejects.toThrow(new AppError(AppError.userExistByEmail))
+        const output = await sut(userDTO)
+        expect(output.right).toBeNull()
+        // Verifica se é igual
+        expect(output.left).toEqual(Either.userExist('E-mail'))
+        expect(userRepository.getUserByEmail).toHaveBeenLastCalledWith(userDTO.email)
+        expect(userRepository.getUserByEmail).toHaveBeenCalledTimes(1)
     })
 
 })
