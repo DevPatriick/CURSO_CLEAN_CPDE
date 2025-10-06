@@ -43,4 +43,22 @@ describe('Cadastrar usuário UseCase', function(){
             registerUserUsecase({})
         }).toThrow(new AppError(AppError.dependecy))
     })
+
+    test('Deve retornar um throw AppErro que os params não forem fornecidos', async function(){
+        const sut = registerUserUseCase({ userRepository })
+        await expect(() => sut({})).rejects.toThrow(new AppError(AppError.invalidparams))
+    })
+
+    test('Deve retornar um throw AppErro email INVALIDO', async function(){
+        const userDTO = {
+            name: 'Patrick Reis Andrade',
+            CPF: 5555,
+            phone: 51992794875,
+            address: 'Rua dos andradas 385',
+            email: '@gmail.com'
+        }
+
+        const sut = registerUserUseCase({ userRepository })
+        await expect(() => sut(userDTO)).rejects.toThrow(new AppError(AppError.invalidEmail))
+    })
 })

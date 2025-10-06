@@ -6,4 +6,6 @@ module.exports = class AppError extends Error {
     }
 
     static dependecy = 'Alguma dependência não foi fornecida'
+    static invalidparams = 'Preencha todos os campos'
+    static invalidEmail = 'E-mail inválido'
 }
