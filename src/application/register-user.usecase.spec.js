@@ -60,7 +60,7 @@ describe('Cadastrar usuário UseCase', function(){
             email: 'andrade.patrick@gmail.com'
         }
 
-        const sut = registerUserUseCase({ userRepository })
+        const sut = registerUserUseCase({ userRepository    })
         await expect(() => sut(userDTO)).rejects.toThrow(new AppError(AppError.invalidCPF))
     })
 

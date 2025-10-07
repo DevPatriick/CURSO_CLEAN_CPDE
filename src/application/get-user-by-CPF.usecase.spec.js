@@ -1,4 +1,5 @@
 const getUserByCPFUseCase = require('./get-user-by-CPF.usecase')
+const { Either, AppError } = require("../shared/errors");
 
 
 describe('Buscar usuário por CPF', ()=> {
@@ -42,5 +43,20 @@ describe('Buscar usuário por CPF', ()=> {
         expect(output).toBeNull()
         expect(userRepository.getUserByCPF).toHaveBeenCalledWith(CPFDTO.CPF)
         expect(userRepository.getUserByCPF).toHaveBeenCalledTimes(1)
+    })
+
+    test('Deve retornar um throw AppError se o userRepository não for fornecido', function (){
+        expect(()=> {
+            getUserByCPFUseCase({})
+        }).toThrow(new AppError(AppError.dependecy))
+    })
+
+    test('Deve retornar um throw caso o CPF não seja passado', async () => {
+        const sut = getUserByCPFUseCase({ userRepository })
+
+        // await expect(()=> sut({})).rejects.toThrow(new AppError(AppError.invalidCPF))
+        await expect(() => sut({})).rejects.toThrow(new AppError(AppError.invalidCPF))
+        // expect(userRepository.getUserByCPF).toHaveBeenCalledWith({})
+        // expect(userRepository.getUserByCPF).toHaveBeenCalledTimes(1)
     })
 })

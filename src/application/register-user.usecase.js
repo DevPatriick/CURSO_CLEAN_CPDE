@@ -5,7 +5,7 @@ const { Left } = require("../shared/errors/Either");
 module.exports = function registerUserUseCase({ userRepository }) {
   if (!userRepository) throw new AppError(AppError.dependecy);
   return async function ({ name, CPF, phone, address, email }) {
-      const cpfRegex = /^(\d{3}\.?\d{3}\.?\d{3}-?\d{2})$/;
+    const cpfRegex = /^(\d{3}\.?\d{3}\.?\d{3}-?\d{2})$/;
     const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i;
     const params = name && CPF && phone && address && email;
 
