@@ -29,4 +29,18 @@ describe('Buscar usuário por CPF', ()=> {
         expect(userRepository.getUserByCPF).toHaveBeenCalledWith(CPFDTO.CPF)
         expect(userRepository.getUserByCPF).toHaveBeenCalledTimes(1)
     })
+
+    test('Teste caso não seja encontrado nenhum CPF', async () => {
+        userRepository.getUserByCPF.mockResolvedValue(null)
+        const CPFDTO = {
+            CPF: 11122233344
+        }
+
+        const sut = getUserByCPFUseCase({ userRepository })
+        const output = await sut(CPFDTO)
+
+        expect(output).toBeNull()
+        expect(userRepository.getUserByCPF).toHaveBeenCalledWith(CPFDTO.CPF)
+        expect(userRepository.getUserByCPF).toHaveBeenCalledTimes(1)
+    })
 })
