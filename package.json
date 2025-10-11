@@ -18,6 +18,8 @@
   "homepage": "https://github.com/DevPatriick/CURSO_CLEAN_CPDE#readme",
   "description": "",
   "devDependencies": {
-    "jest": "^30.2.0"
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5"
   }
 }
