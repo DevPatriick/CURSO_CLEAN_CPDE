@@ -16,4 +16,8 @@ module.exports = class Either {
     static userExist(value){
         return { message: `${value} já cadastro` }
     }
+
+    static ISNBExist(value){
+        return { message: `${value} já cadastrado`}
+    }
 }

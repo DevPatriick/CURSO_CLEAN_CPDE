@@ -10,9 +10,9 @@
 ## UseCases (Regras de negócios)
 [X] Cadastrar um novo usuário
     -> CPF ou email devem ser únicos
-[] Buscar um cadastro de usuário por CPF
+[X] Buscar um cadastro de usuário por CPF
     -> Retornar um usuário ou vazio
-[] Cadastrar um novo livro
+[X] Cadastrar um novo livro
     -> ISBN deve ser único
 [] Buscar um livro por nome ou ISBN
     -> Retornar os livros ou vazio
@@ -31,3 +31,6 @@
 [X] Cadastrar: [{name, CPF, phone, address, email}] => Promise<void>
 [X] userExistByCPF(CPF) => Promise<void>
 [X] userExistByEmail(Email) => Promise<void>
+
+## Livros Repository
+[] Cadastrar: ({name, quantity, author, gender, ISBN}) => Promise<void>
