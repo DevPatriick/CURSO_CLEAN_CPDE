@@ -26,4 +26,10 @@ describe('Cadastro de livros', () => {
     test('Deve retorna um throw AppError se o livro não for fornecido', () => {
         expect(()=> registerBookUseCase({}).toThrow(new AppError(AppError.dependecy)))
     })
+
+    test('Deve retorna um throw AppError se os campos obrigatorios não forem passados', async () => {
+        const sut = registerBookUseCase({ bookRepository })
+
+        await expect(() => sut({})).rejects.toThrow(new AppError(AppError.invalidparams))
+    })
 })

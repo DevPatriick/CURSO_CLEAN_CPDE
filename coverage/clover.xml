@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760149241929" clover="3.2.0">
-  <project timestamp="1760149241929" name="All files">
-    <metrics statements="97" coveredstatements="97" conditionals="34" coveredconditionals="32" methods="9" coveredmethods="9" elements="140" coveredelements="138" complexity="0" loc="97" ncloc="97" packages="2" files="6" classes="6"/>
+<coverage generated="1760149540981" clover="3.2.0">
+  <project timestamp="1760149540981" name="All files">
+    <metrics statements="97" coveredstatements="97" conditionals="38" coveredconditionals="37" methods="9" coveredmethods="9" elements="144" coveredelements="143" complexity="0" loc="97" ncloc="97" packages="2" files="6" classes="6"/>
     <package name="application">
-      <metrics statements="59" coveredstatements="59" conditionals="28" coveredconditionals="26" methods="3" coveredmethods="3"/>
+      <metrics statements="59" coveredstatements="59" conditionals="32" coveredconditionals="31" methods="3" coveredmethods="3"/>
       <file name="get-user-by-CPF.usecase.js" path="C:\Users\conta\projects\src\application\get-user-by-CPF.usecase.js">
         <metrics statements="11" coveredstatements="11" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -19,14 +19,14 @@
         <line num="11" count="3" type="stmt"/>
       </file>
       <file name="register-book.usecase.js" path="C:\Users\conta\projects\src\application\register-book.usecase.js">
-        <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <metrics statements="17" coveredstatements="17" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="4" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
@@ -36,7 +36,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
       </file>
       <file name="register-user.usecase.js" path="C:\Users\conta\projects\src\application\register-user.usecase.js">
         <metrics statements="31" coveredstatements="31" conditionals="17" coveredconditionals="17" methods="1" coveredmethods="1"/>
@@ -80,9 +80,9 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="12" type="stmt"/>
-        <line num="5" count="12" type="stmt"/>
-        <line num="6" count="12" type="stmt"/>
+        <line num="4" count="14" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
