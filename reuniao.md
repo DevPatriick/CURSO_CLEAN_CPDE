@@ -34,3 +34,4 @@
 
 ## Livros Repository
 [] Cadastrar: ({name, quantity, author, gender, ISBN}) => Promise<void>
+[] existePorISBN: (ISBN) => Promise<boolean>

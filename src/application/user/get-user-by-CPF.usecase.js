@@ -1,4 +1,4 @@
-const { Either, AppError } = require("../shared/errors");
+const { Either, AppError } = require("../../shared/errors");
 
 module.exports = function getUserByCPFUseCase({ userRepository }){
     if (!userRepository) throw new AppError(AppError.dependecy);

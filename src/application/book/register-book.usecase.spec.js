@@ -1,4 +1,4 @@
-const { AppError, Either } = require("../shared/errors")
+const { AppError, Either } = require("../../shared/errors")
 const registerBookUseCase = require("./register-book.usecase")
 
 describe('Cadastro de livros', () => {

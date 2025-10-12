@@ -11,4 +11,5 @@ module.exports = class AppError extends Error {
     static invalidEmail = 'E-mail inválido'
     static userExistByCPF = 'Usuário já existem com este CPF'
     static userExistByEmail = 'Usuário já existem com este e-mail'
+    static invalidISBN = 'ISBN Inválido'
 }

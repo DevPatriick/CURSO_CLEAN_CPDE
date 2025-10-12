@@ -1,4 +1,4 @@
-const { Either, AppError } = require('../shared/errors')
+const { Either, AppError } = require('../../shared/errors')
 const registerUserUsecase = require('./register-user.usecase')
 const registerUserUseCase = require('./register-user.usecase')
 

@@ -1,5 +1,5 @@
 const getUserByCPFUseCase = require('./get-user-by-CPF.usecase')
-const { Either, AppError } = require("../shared/errors");
+const { Either, AppError } = require("../../shared/errors");
 
 
 describe('Buscar usuário por CPF', ()=> {

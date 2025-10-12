@@ -1,4 +1,4 @@
-const { AppError, Either } = require("../shared/errors")
+const { AppError, Either } = require("../../shared/errors")
 
 module.exports = function registerBookUseCase({ bookRepository }){
     if(!bookRepository) throw new AppError(AppError.dependecy)
