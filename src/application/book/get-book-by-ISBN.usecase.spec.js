@@ -50,4 +50,11 @@ describe('Buscar livros por nome ou ISBN UseCase', () => {
     test('Deve retornar um throw se não mandar o bookRepository', () => {
         expect(() => getBookByNameOrISBNUseCase({})).toThrow(new AppError(AppError.dependecy))
     })
+
+    test('Deve retornar um erro caso o campo de busca não for enviado', async () => {
+
+        const sut = getBookByNameOrISBNUseCase({ bookRepository })
+
+        await expect(() => sut({})).rejects.toThrow(new AppError(AppError.invalidISBN))
+    })
 })

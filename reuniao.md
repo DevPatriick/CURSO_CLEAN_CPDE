@@ -14,7 +14,7 @@
     -> Retornar um usuário ou vazio
 [X] Cadastrar um novo livro
     -> ISBN deve ser único
-[] Buscar um livro por nome ou ISBN
+[X] Buscar um livro por nome ou ISBN
     -> Retornar os livros ou vazio
 [] Emprestar um livro ao usuario
     -> A data de retorno não pode ser menor que a data de saída
@@ -35,3 +35,4 @@
 ## Livros Repository
 [] Cadastrar: ({name, quantity, author, gender, ISBN}) => Promise<void>
 [] existePorISBN: (ISBN) => Promise<boolean>
+[] buscarPorNomeOuISBN: (valor) => Promise<array> de livros

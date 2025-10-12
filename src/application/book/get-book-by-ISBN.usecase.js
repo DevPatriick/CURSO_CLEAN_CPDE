@@ -7,5 +7,5 @@ module.exports = function getBookByNameOrISBNUseCase({ bookRepository }){
         const dataBook = await bookRepository.getBookByNameOrISBN(value)
         if(!dataBook) return null
         return Either.Right(dataBook)
-    } 
+    }
 }
