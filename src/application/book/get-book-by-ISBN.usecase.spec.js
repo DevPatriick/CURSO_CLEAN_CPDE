@@ -31,4 +31,19 @@ describe('Buscar livros por nome ou ISBN UseCase', () => {
         expect(bookRepository.getBookByNameOrISBN).toHaveBeenCalledWith(nameISBNDTO.value)
         expect(bookRepository.getBookByNameOrISBN).toHaveBeenCalledTimes(1)
     })
+
+    test('Deve retornar um array vazio quando não existir um livro com o nome ou ISBN informados', async () => {
+        const nameISBNDTO = {
+            value: 'name_or_ISBN'
+        }
+
+        bookRepository.getBookByNameOrISBN.mockResolvedValue([])
+
+        const sut = getBookByNameOrISBNUseCase({ bookRepository })
+        const output = await sut(nameISBNDTO)
+
+        expect(output.right).toEqual([])
+        expect(bookRepository.getBookByNameOrISBN).toHaveBeenCalledWith(nameISBNDTO.value)
+        expect(bookRepository.getBookByNameOrISBN).toHaveBeenCalledTimes(1)
+    })
 })
