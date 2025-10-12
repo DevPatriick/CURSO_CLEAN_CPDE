@@ -46,4 +46,8 @@ describe('Buscar livros por nome ou ISBN UseCase', () => {
         expect(bookRepository.getBookByNameOrISBN).toHaveBeenCalledWith(nameISBNDTO.value)
         expect(bookRepository.getBookByNameOrISBN).toHaveBeenCalledTimes(1)
     })
+
+    test('Deve retornar um throw se não mandar o bookRepository', () => {
+        expect(() => getBookByNameOrISBNUseCase({})).toThrow(new AppError(AppError.dependecy))
+    })
 })
