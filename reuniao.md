@@ -16,7 +16,7 @@
     -> ISBN deve ser único
 [X] Buscar um livro por nome ou ISBN
     -> Retornar os livros ou vazio
-[] Emprestar um livro ao usuario
+[X] Emprestar um livro ao usuario
     -> A data de retorno não pode ser menor que a data de saída
     -> Um usuário não pode estar com mais de um livro com o mesmo ISBN
     -> Um usuário pode estar com mais de um livro com ISBN diferentes ao mesmo tempo
