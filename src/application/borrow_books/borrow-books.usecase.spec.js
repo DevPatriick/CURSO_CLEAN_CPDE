@@ -39,4 +39,24 @@ describe('Emprestar livro UseCase', ()=> {
 
         expect(output.left).toBe(Either.dateReturnInvalid)
     })
+
+    test('Não deve permitir emprestar o livro com o mesmo ISBN para o mesmo usuario antes que o livro antes de devolver o antigo', async () => {
+        borrowBooksRepository.userBorrowISBNExist.mockResolvedValue(true)
+        const borrowDTO = {
+            user_id: 123,
+            book_id: 123,
+            date_borrow: new Date("2025-10-16"),
+            date_return: new Date("2025-10-20")
+        }
+
+        const sut = borrowBooksUsecase({ borrowBooksRepository })
+        const output = await sut(borrowDTO)
+
+        expect(output.left).toBe(Either.userWithISBNBorrow)
+        expect(borrowBooksRepository.userBorrowISBNExist).toHaveBeenCalledWith({
+            user_id: borrowDTO.user_id,
+            book_id: borrowDTO.book_id
+        })
+        expect(borrowBooksRepository.userBorrowISBNExist).toHaveBeenCalledTimes(1)
+    })
 })

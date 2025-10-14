@@ -10,7 +10,7 @@ module.exports = function borrowBooks({ borrowBooksRepository }) {
             user_id,
             book_id
         })
-        if(userBorrowISBNExist) return Either.userWithISBNBorrow
+        if(userBorrowISBNExist) return Either.Left(Either.userWithISBNBorrow)
 
         await borrowBooksRepository.borrow({
             user_id,
