@@ -33,6 +33,9 @@
 [X] userExistByEmail(Email) => Promise<void>
 
 ## Livros Repository
-[] Cadastrar: ({name, quantity, author, gender, ISBN}) => Promise<void>
-[] existePorISBN: (ISBN) => Promise<boolean>
-[] buscarPorNomeOuISBN: (valor) => Promise<array> de livros
+[X] Cadastrar: ({name, quantity, author, gender, ISBN}) => Promise<void>
+[X] existePorISBN: (ISBN) => Promise<boolean>
+[X] buscarPorNomeOuISBN: (valor) => Promise<array> de livros
+
+## Emprestimos Repository
+[] Emprestar um livro: ({user_id, book_id, date_borrow, date_return}) => Promise<void>
