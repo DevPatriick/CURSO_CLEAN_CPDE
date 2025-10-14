@@ -1,6 +1,8 @@
+const { Either, AppError } = require("../../shared/errors")
+const returnBookUseCase = require('./return-book.usecase')
 
-describre('Devolver livro UseCase', () => {
-    const borrowRepository = {
+describe('Devolver livro UseCase', () => {
+    const returnBookRepository = {
         return: jest.fn()
     }
     test('Deve ser possível devolver um livro sem multa', async () => {
@@ -9,11 +11,11 @@ describre('Devolver livro UseCase', () => {
             date_return: new Date('2025-10-14')
         }
 
-        const sut = returnBookUseCase({ borrowBooksUsecase })
+        const sut = returnBookUseCase({ returnBookRepository })
         const output = await sut(returnBookDTO)
 
-        expect(output.right).toBe('Multa por atraso: R$0')
-        expect(borrowRepository.return).toHaveBeenCalledWith(returnBookDTO)
-        expect(borrowRepository.return).toHaveBeenCalledTimes(1)
+        expect(output).toEqual(Either.fine('0'))
+        expect(returnBookRepository.return).toHaveBeenCalledWith(returnBookDTO)
+        expect(returnBookRepository.return).toHaveBeenCalledTimes(1)
     })
 })

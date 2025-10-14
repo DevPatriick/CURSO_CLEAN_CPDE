@@ -28,4 +28,8 @@ module.exports = class Either {
     static userWithISBNBorrow(){
         return { message: `Usuário está com o livro neste momento`}
     }
+
+    static fine(value) {
+        return `Multa por atraso R$ ${value}`
+    }
 }
