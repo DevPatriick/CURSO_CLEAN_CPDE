@@ -1,3 +1,4 @@
+const loanEntity = require("../../domain/entities/loan.entity")
 const { AppError, Either } = require("../../shared/errors")
 
 module.exports = function returnBookUseCase({ returnBookRepository }) {
@@ -10,15 +11,8 @@ module.exports = function returnBookUseCase({ returnBookRepository }) {
             date_return
         })
 
-        const verifyFine = (date_expect_return, date_return) => {
-            const fineByDay = 10;
-            const differenceDays = (date_return.getTime() - date_expect_return.getTime()) / (1000 * 60 * 60 * 24)
+        const fine = loanEntity.verifyFine(date_expect_return.date_return, date_return)
 
-            if (differenceDays <= 0) return 0
-
-            return (differenceDays * fineByDay)
-        }
-
-        return Either.fine(`${verifyFine(date_expect_return.date_return, date_return)}`)
+        return Either.fine(`${fine}`)
     }
 }
