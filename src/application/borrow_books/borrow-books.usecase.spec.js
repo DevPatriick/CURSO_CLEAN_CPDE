@@ -59,4 +59,13 @@ describe('Emprestar livro UseCase', ()=> {
         })
         expect(borrowBooksRepository.userBorrowISBNExist).toHaveBeenCalledTimes(1)
     })
+
+    test('Deve retornar um throw AppError se o borrowRepositoy não for fornecido', () => {
+        expect(()=> borrowBooksUsecase({})).toThrow(new AppError(AppError.dependecy))
+    })
+
+    test('Deve retornar um throw AppError se algum campo obrigatório não for fornecido', async () => {
+        const sut = borrowBooksUsecase({ borrowBooksRepository })
+        await expect(() => sut({})).rejects.toThrow(new AppError(AppError.invalidparams))
+    })
 })

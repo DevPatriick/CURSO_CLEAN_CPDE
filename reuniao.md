@@ -39,3 +39,4 @@
 
 ## Emprestimos Repository
 [] Emprestar um livro: ({user_id, book_id, date_borrow, date_return}) => Promise<void>
+[] Existe Livro ISBN emprestado pendente usuario: ({user_id, book_id}) => Promise<boolean>
