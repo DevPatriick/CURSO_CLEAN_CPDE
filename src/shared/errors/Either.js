@@ -20,4 +20,12 @@ module.exports = class Either {
     static ISNBExist(value){
         return { message: `${value} já cadastrado`}
     }
+
+    static dateReturnInvalid(){
+        return { message: `Data de retorno menos que a data de saída`}
+    }
+
+    static userWithISBNBorrow(){
+        return { message: `Usuário está com o livro neste momento`}
+    }
 }
