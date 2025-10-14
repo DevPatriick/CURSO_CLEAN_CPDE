@@ -5,11 +5,28 @@ const { AppError, Either } = require("../../shared/errors/index")
 describe('Emprestar livro UseCase', ()=> {
     const borrowBooksRepository = {
         borrow: jest.fn(),
-        userBorrowISBNExist: jest.fn()
+        userBorrowISBNExist: jest.fn(),
+        getBorrowById: jest.fn()
+    }
+
+    const emailService = {
+        sendEmail: jest.fn()
     }
 
     test('Deve pode emprestar um livro', async () => {
         borrowBooksRepository.userBorrowISBNExist.mockResolvedValue(false)
+        borrowBooksRepository.borrow.mockResolvedValue('id_da_busca')
+        borrowBooksRepository.getBorrowById.mockResolvedValue({
+            user: {
+                name: 'Patrick',
+                CPF: 11122233344,
+                email: 'andrade.patrickreis@gmail.com',
+            },
+            book: {
+                book: 'qualquer coisa' 
+            }
+
+        })
         const borrowDTO = {
             user_id: 123,
             book_id: 123,
@@ -17,11 +34,19 @@ describe('Emprestar livro UseCase', ()=> {
             date_return: new Date("2025-10-20")
         }
 
-        const sut = borrowBooksUsecase({ borrowBooksRepository })
+        const sut = borrowBooksUsecase({ borrowBooksRepository, emailService })
         const output = await sut(borrowDTO)
 
         expect(output.right).toBeNull()
         expect(borrowBooksRepository.borrow).toHaveBeenCalledWith(borrowDTO)
+        expect(emailService.sendEmail).toHaveBeenCalledWith({
+            date_borrow: borrowDTO.date_borrow,
+            date_return: borrowDTO.date_return,
+            name: 'Patrick',
+            CPF: 11122233344,
+            email: 'andrade.patrickreis@gmail.com',
+            book: 'qualquer coisa'
+        })
         expect(borrowBooksRepository.borrow).toHaveBeenCalledTimes(1)
     })
 
@@ -34,7 +59,7 @@ describe('Emprestar livro UseCase', ()=> {
             date_return: new Date("2025-10-20")
         }
 
-        const sut = borrowBooksUsecase({ borrowBooksRepository })
+        const sut = borrowBooksUsecase({ borrowBooksRepository, emailService })
         const output = await sut(borrowDTO)
 
         expect(output.left).toBe(Either.dateReturnInvalid)
@@ -49,7 +74,7 @@ describe('Emprestar livro UseCase', ()=> {
             date_return: new Date("2025-10-20")
         }
 
-        const sut = borrowBooksUsecase({ borrowBooksRepository })
+        const sut = borrowBooksUsecase({ borrowBooksRepository, emailService })
         const output = await sut(borrowDTO)
 
         expect(output.left).toBe(Either.userWithISBNBorrow)
@@ -65,7 +90,7 @@ describe('Emprestar livro UseCase', ()=> {
     })
 
     test('Deve retornar um throw AppError se algum campo obrigatório não for fornecido', async () => {
-        const sut = borrowBooksUsecase({ borrowBooksRepository })
+        const sut = borrowBooksUsecase({ borrowBooksRepository, emailService })
         await expect(() => sut({})).rejects.toThrow(new AppError(AppError.invalidparams))
     })
 })

@@ -1,7 +1,7 @@
 const { AppError, Either } = require("../../shared/errors")
 
-module.exports = function borrowBooks({ borrowBooksRepository }) {
-    if(!borrowBooksRepository) throw new AppError(AppError.dependecy)
+module.exports = function borrowBooks({ borrowBooksRepository, emailService }) {
+    if(!borrowBooksRepository || !emailService) throw new AppError(AppError.dependecy)
     return async function ({ user_id, book_id, date_borrow, date_return}){
         const checkValues = user_id && book_id && date_borrow && date_return
         if(!checkValues) throw new AppError(AppError.invalidparams)
@@ -12,11 +12,22 @@ module.exports = function borrowBooks({ borrowBooksRepository }) {
         })
         if(userBorrowISBNExist) return Either.Left(Either.userWithISBNBorrow)
 
-        await borrowBooksRepository.borrow({
+        const id = await borrowBooksRepository.borrow({
             user_id,
             book_id,
             date_borrow,
             date_return
+        })
+
+        const {user, book} = await borrowBooksRepository.getBorrowById(id)
+
+        await emailService.sendEmail({
+            date_borrow,
+            date_return,
+            name: user.name,
+            CPF: user.CPF,
+            email: user.email,
+            book: book.book
         })
 
         return Either.Right(null)
