@@ -38,4 +38,13 @@ describe('Devolver livro UseCase', () => {
         expect(returnBookRepository.return).toHaveBeenCalledWith(returnBookDTO)
         expect(returnBookRepository.return).toHaveBeenCalledTimes(1)
     })
+
+    test('Deve retornar um throw AppError se o returnBookRepository não for fornecido', () => {
+        expect(()=> returnBookUseCase({})).toThrow(new AppError(AppError.dependecy))
+    })
+
+    test('Deve retornar um throw AppError se algum campo obrigatório não for fornecido', async () => {
+        const sut = returnBookUseCase({ returnBookRepository })
+        await expect(() => sut({})).rejects.toThrow(new AppError(AppError.invalidparams))
+    })
 })
