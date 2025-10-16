@@ -50,4 +50,12 @@ describe('Usuario Repository', () => {
 
         expect(existByCPF).toBe(true)
     })
+
+    test('Existe por CPF, retorna false', async () => {
+        await typeormUserRepository.save(userDTO)
+
+        const existByCPF = await sut.existByCPF('00000000000')
+
+        expect(existByCPF).toBe(false)
+    })
 })
