@@ -13,7 +13,15 @@ const userRepository = () => {
             email
         })
     }
-    return { register }
+
+    const getUserByCPF = async (CPF) => {
+        return await typeormUserRepository.findOne({
+            where: {
+                CPF
+            }
+        })
+    }
+    return { register, getUserByCPF }
 }
 
 module.exports = { userRepository, typeormUserRepository}
