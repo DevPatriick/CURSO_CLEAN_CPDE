@@ -58,4 +58,15 @@ describe('Usuario Repository', () => {
 
         expect(existByCPF).toBe(false)
     })
+
+    test('Existe por email, retorna true', async () => {
+        await typeormUserRepository.save(userDTO)
+        const existByEmail = await sut.existByEmail('andrade.patrickreis@gmail.com')
+        expect(existByEmail).toBe(true)
+    })
+
+    test('Existe por email, retorna false', async () => {
+        const existByEmail = await sut.existByEmail('andrade.patrickreis@gmail.com')
+        expect(existByEmail).toBe(false)
+    })
 })
