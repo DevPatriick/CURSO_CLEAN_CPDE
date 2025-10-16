@@ -10,6 +10,9 @@ module.exports = new EntitySchema({
             type: 'int',
             generated: true
         },
+        name: {
+            type: 'varchar'
+        },
         quantity: {
             type: 'int'
         },
@@ -18,7 +21,7 @@ module.exports = new EntitySchema({
             unique: true
         },
         gender: {
-            type: 'char'
+            type: 'varchar'
         },
         ISBN: {
             type: 'int',
