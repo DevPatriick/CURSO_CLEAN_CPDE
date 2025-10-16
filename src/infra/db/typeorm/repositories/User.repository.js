@@ -21,7 +21,18 @@ const userRepository = () => {
             }
         })
     }
-    return { register, getUserByCPF }
+
+    const existByCPF = async (CPF) => {
+        const user = await typeormUserRepository.count({
+            where: {
+                CPF
+            }
+        })
+
+        return user === 0 ? false : true
+    }
+
+    return { register, getUserByCPF, existByCPF }
 }
 
-module.exports = { userRepository, typeormUserRepository}
+module.exports = { userRepository, typeormUserRepository} 
