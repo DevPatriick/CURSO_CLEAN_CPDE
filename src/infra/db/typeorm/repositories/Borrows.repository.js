@@ -1,5 +1,6 @@
-const { Like } = require('typeorm')
+const { Like, IsNull } = require('typeorm')
 const { typeormServer } = require('../setup')
+const { id } = require('../../../../../jest.config')
 
 const typeormBorrowRepository = typeormServer.getRepository('Borrow')
 
@@ -25,10 +26,34 @@ const borrowRepository = () => {
         return {date_return: record.date_return}
     }
 
+    const getPeddingBookWithUser = async () => {
+        const borrowPedding = await typeormBorrowRepository.find({
+            where: {
+                date_devolution: IsNull()
+            },
+            relations: ['user', 'book'],
+            select: {
+                id: true,
+                date_return: true,
+                date_borrow: true,
+                user: {
+                    name: true,
+                    CPF: true
+                },
+                book: {
+                    name: true
+                }
+            }
+        })
+
+        return borrowPedding
+    }
+
 
     return {
         borrow,
-        return: returno 
+        return: returno,
+        getPeddingBookWithUser
     }
 }
 

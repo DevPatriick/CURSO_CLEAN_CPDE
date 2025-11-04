@@ -22,6 +22,10 @@ module.exports = new EntitySchema({
         date_borrow: {
             type: 'date'
         },
+        date_devolution: {
+            type: 'date',
+            nullable: true
+        }
     },
     relations: {
         // um usuario pode ser muito emprestimos, many to one, muitos para um

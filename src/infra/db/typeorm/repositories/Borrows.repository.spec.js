@@ -1,3 +1,4 @@
+// const { id } = require('../../../../../jest.config');
 const { typeormBookRepository } = require('./Book.repository');
 const { borrowRepository, typeormBorrowRepository } = require('./Borrows.repository');
 const { typeormUserRepository } = require('./User.repository');
@@ -8,6 +9,12 @@ describe('Emprestimo Repository Typeorm', () => {
     beforeAll(() => {
         sut = borrowRepository()
     })
+
+    // beforeEach(async () => {
+    //     await typeormBorrowRepository.delete({})
+    //     await typeormUserRepository.delete({})
+    //     await typeormBookRepository.delete({})
+    // })
 
     const userDTO = {
         name: 'patrick',
@@ -75,8 +82,33 @@ describe('Emprestimo Repository Typeorm', () => {
             date_return: borrow.date_return
         })
 
-        const getBorrowByID = await typeormBorrowRepository.findOneBy({borrow_id: borrow.id})
+        const getBorrowByID = await typeormBorrowRepository.findOneBy({id: borrow.id})
 
         expect(getBorrowByID.date_return).toBe('2024-01-26')
+    })
+
+    test('Deve retornar os emprestimos pendentes', async () => {
+        const user = await typeormUserRepository.save(userDTO)
+        const book = await typeormBookRepository.save(bookDTO)
+
+        await typeormBorrowRepository.save([
+            {
+                user_id: user.id,
+                book_id: book.id,
+                date_borrow: '2024-01-27',
+                date_return: '2024-01-28',
+                date_devolution: '2024-01-28'
+            },
+            {
+                user_id: user.id,
+                book_id: book.id,
+                date_borrow: '2024-01-26',
+                date_return: '2024-01-26'
+            },
+        ])
+
+        const borrowPedding = await sut.getPeddingBookWithUser()
+
+        expect(borrowPedding).toHaveLength(4)
     })
 })
