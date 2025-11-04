@@ -1,6 +1,6 @@
 const { Like, IsNull } = require('typeorm')
 const { typeormServer } = require('../setup')
-const { id } = require('../../../../../jest.config')
+// const { id } = require('../../../../../jest.config')
 
 const typeormBorrowRepository = typeormServer.getRepository('Borrow')
 
@@ -49,11 +49,24 @@ const borrowRepository = () => {
         return borrowPedding
     }
 
+    const userBorrowISBNExist = async ({user_id, book_id}) => {
+        const borrowBook = await typeormBorrowRepository.count({
+            where: {
+                date_devolution: IsNull(),
+                book_id,
+                user_id
+            }
+        })
+
+        return borrowBook === 0 ? false : true
+    }
+
 
     return {
         borrow,
         return: returno,
-        getPeddingBookWithUser
+        getPeddingBookWithUser,
+        userBorrowISBNExist
     }
 }
 
