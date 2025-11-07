@@ -133,4 +133,38 @@ describe('Emprestimo Repository Typeorm', () => {
 
         expect(borrowBook).toBe(true)
     })
+
+    test('Deve retornar o emprestimo buscado por id com o user e o book', async () => {
+        const user = await typeormUserRepository.save(userDTO)
+        const book = await typeormBookRepository.save(bookDTO)
+
+        const borrow = await typeormBorrowRepository.save({
+            user_id: user.id,
+            book_id: book.id,
+            date_borrow: '2024-01-26',
+            date_return: '2024-01-26'
+        })
+
+        const getBorrowById = await sut.getBorrowById(borrow.id)
+
+        expect(getBorrowById).toEqual({
+            id: borrow.book_id,
+            date_borrow: '2024-01-26',
+            date_return: '2024-01-28',
+            user: {
+                name: 'patrick',
+                CPF: "123456789",
+                address: 'Rua qualquer',
+                phone: "519929797",
+                email: 'andrade.patrickreis@gmail.com'
+            },
+            book: {
+                name: 'qualquer',
+                quantity: 10,
+                author: 'paqtirck',
+                gender: 'açaõ',
+                ISBN: 123456,
+            }
+        })
+    })
 })

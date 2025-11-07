@@ -22,7 +22,7 @@ const borrowRepository = () => {
         const record  = await typeormBorrowRepository.findOneBy({
             id: borrow_id
         })
-
+  
         return {date_return: record.date_return}
     }
 
@@ -61,12 +61,43 @@ const borrowRepository = () => {
         return borrowBook === 0 ? false : true
     }
 
+    const getBorrowById = async ({borrow_id}) => {
+        const borrow = await typeormBorrowRepository.findOne({
+            where: { 
+                id: borrow_id
+            },
+            relations: ['user', 'book'],
+            select: {
+            id: true,
+            date_borrow: true,
+            date_return: true,
+            user: {
+                name: true,
+                CPF: true,
+                address: true,
+                phone: true,
+                email: true
+            },
+            book: {
+                name: true,
+                quantity: true,
+                author: true,
+                gender: true,
+                ISBN: true,
+            }
+            }
+        })
+
+        return borrow
+    }
+
 
     return {
         borrow,
         return: returno,
         getPeddingBookWithUser,
-        userBorrowISBNExist
+        userBorrowISBNExist,
+        getBorrowById
     }
 }
 
