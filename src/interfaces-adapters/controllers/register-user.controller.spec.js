@@ -1,6 +1,7 @@
 const { Either, AppError } = require("../../shared/errors")
 const httpResponse = require("../../shared/helpers/http.response")
 const registerUserController = require("./register-user.controller")
+const { ZodError } = require('zod')
 
 
 describe('Cadastrar usuario controller', () => {
@@ -11,7 +12,7 @@ describe('Cadastrar usuario controller', () => {
         const httpRequest = {
             body: {
                 name: 'Patrick',
-                CPF: '11122233344',
+                CPF: '111.222.333-44',
                 address: 'Rua dos andradas',
                 phone: '51992794875',
                 email: 'andrade.patrickreis@gmail.com'
@@ -39,7 +40,7 @@ describe('Cadastrar usuario controller', () => {
         const httpRequest = {
             body: {
                 name: 'Patrick',
-                CPF: '11122233344',
+                CPF: '111.222.333-44',
                 address: 'Rua dos andradas',
                 phone: '51992794875',
                 email: 'andrade.patrickreis@gmail.com'
@@ -54,5 +55,13 @@ describe('Cadastrar usuario controller', () => {
         expect(response).toEqual(httpResponse(400, 'logica_invalida'))
         expect(registerUserUseCase).toHaveBeenCalledWith(httpRequest.body)
         expect(registerUserUseCase).toHaveBeenCalledTimes(1)
+    })
+
+    test('Deve retornar um erro do zodValidator', () => {
+        const httpRequest = {
+            body: {}
+        }
+
+        expect(() => registerUserController({registerUserUseCase, httpRequest})).rejects.toBeInstanceOf(ZodError)
     })
 })
