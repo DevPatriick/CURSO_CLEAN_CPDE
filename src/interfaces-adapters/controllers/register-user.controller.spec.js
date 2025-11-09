@@ -1,4 +1,4 @@
-const { Either } = require("../../shared/errors")
+const { Either, AppError } = require("../../shared/errors")
 const httpResponse = require("../../shared/helpers/http.response")
 const registerUserController = require("./register-user.controller")
 
@@ -26,5 +26,11 @@ describe('Cadastrar usuario controller', () => {
         expect(response).toEqual(httpResponse(201, null))
         expect(registerUserUseCase).toHaveBeenCalledWith(httpRequest.body)
         expect(registerUserUseCase).toHaveBeenCalledTimes(1)
+    })
+
+    test('Deve retornar um throw AppError se o registerUserUseCase e httpRequest não for fornecido', async () => {
+        expect(() => registerUserController({})).rejects.toThrow(
+            new AppError(AppError.dependecy)
+        )
     })
 })
