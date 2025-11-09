@@ -8,12 +8,9 @@ const zodValidator = z.object({
     .refine((value) => /^([0-9]{3}\.?[0-9]{3}\.[0-9]{3}\-?[0-9]{2})$/.test(value)),
 })
 
-module.exports = registerUserController = async ({
-    getUserByCPFUseCase,
-    httpRequest
-}) => {
-    const {CPF} = httpRequest.body
-    const output = await zodValidator.parse(getUserByCPFUseCase({ CPF }))
+module.exports = registerUserController = async ({ getUserByCPFUseCase, httpRequest }) => {
+    const {CPF} = zodValidator.parse(httpRequest.params)
+    const output = await getUserByCPFUseCase({ CPF })
 
     return output.fold(
         err => httpResponse(400, err.message),
