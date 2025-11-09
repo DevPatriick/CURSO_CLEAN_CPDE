@@ -1,5 +1,5 @@
 const { RepositoryNotTreeError } = require("typeorm");
-const { Either } = require("../../shared/errors")
+const { Either, AppError } = require("../../shared/errors")
 const httpResponse = require("../../shared/helpers/http.response")
 const getUserByCPFController = require("./get-user-by-CPF.controller")
 
@@ -46,5 +46,11 @@ describe('Buscar usuario por CPF', () => {
         expect(response).toEqual(httpResponse(201, null))
         expect(getUserByCPFUseCase).toHaveBeenCalledWith(httpRequest.params)
         expect(getUserByCPFUseCase).toHaveBeenCalledTimes(1)
+    })
+
+    it('Deve retornar um throw AppError se o getUserByCPFUseCase e o httpRequest n forem fornecidos ', async () => {
+        await expect(() => getUserByCPFController({})).rejects.toThrow(
+            new AppError(AppError.dependecy)
+        )
     })
 })

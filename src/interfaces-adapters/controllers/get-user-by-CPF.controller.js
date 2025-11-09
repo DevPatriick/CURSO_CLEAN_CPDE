@@ -1,3 +1,4 @@
+const { AppError } = require("../../shared/errors");
 const httpResponse = require("../../shared/helpers/http.response")
 const {z} = require('zod')
 
@@ -9,7 +10,10 @@ const zodValidator = z.object({
 })
 
 module.exports = registerUserController = async ({ getUserByCPFUseCase, httpRequest }) => {
+    const checkDepency = !getUserByCPFUseCase || !httpRequest || !httpRequest.params;
+    if(checkDepency) throw new AppError(AppError.dependecy)
     const {CPF} = zodValidator.parse(httpRequest.params)
+
     const output = await getUserByCPFUseCase({ CPF })
 
     return output.fold(
