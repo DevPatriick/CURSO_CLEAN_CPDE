@@ -13,6 +13,10 @@ module.exports = class Either {
         return new Either(null,right)
     }
 
+    fold(leftFn, rightFn){
+        return this.left != null ? leftFn(this.left) : rightFn(this.right)
+    }
+
     static userExist(value){
         return { message: `${value} já cadastro` }
     }
