@@ -1,3 +1,4 @@
+const { RepositoryNotTreeError } = require("typeorm");
 const { Either } = require("../../shared/errors")
 const httpResponse = require("../../shared/helpers/http.response")
 const getUserByCPFController = require("./get-user-by-CPF.controller")
@@ -29,4 +30,21 @@ describe('Buscar usuario por CPF', () => {
         expect(getUserByCPFUseCase).toHaveBeenCalledTimes(1)
     })
 
+    it('Deve retornar um httpResponse 200 e null se não for encontrado nenhum usario com o CPF', async () => {
+        getUserByCPFUseCase.mockResolvedValue(Either.Right(null))
+
+        const httpRequest = {
+            params: {
+                CPF: '111.222.333-44'
+            }
+        }
+        const response = await getUserByCPFController({
+            getUserByCPFUseCase,
+            httpRequest
+        })
+
+        expect(response).toEqual(httpResponse(201, null))
+        expect(getUserByCPFUseCase).toHaveBeenCalledWith(httpRequest.params)
+        expect(getUserByCPFUseCase).toHaveBeenCalledTimes(1)
+    })
 })
