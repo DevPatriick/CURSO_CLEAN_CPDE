@@ -1,4 +1,4 @@
-
+const httpResponse = require("../../shared/helpers/http.response")
 
 module.exports = registerUserController = async ({registerUserUseCase,httpRequest}) => {
     const {name, CPF, address, phone, email} = httpRequest.body
@@ -12,7 +12,7 @@ module.exports = registerUserController = async ({registerUserUseCase,httpReques
     })
 
     return output.fold(
-        err => httpRequest(400, err.message),
-        () => httpRequest(201, null)
+        err => httpResponse(400, err.message),
+        () => httpResponse(201, null)
     )
 }
