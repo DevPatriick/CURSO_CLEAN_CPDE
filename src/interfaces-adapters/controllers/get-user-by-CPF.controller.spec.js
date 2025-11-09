@@ -2,6 +2,7 @@ const { RepositoryNotTreeError } = require("typeorm");
 const { Either, AppError } = require("../../shared/errors")
 const httpResponse = require("../../shared/helpers/http.response")
 const getUserByCPFController = require("./get-user-by-CPF.controller")
+const { ZodError } = require('zod')
 
 describe('Buscar usuario por CPF', () => {
     const getUserByCPFUseCase = jest.fn();
@@ -52,5 +53,13 @@ describe('Buscar usuario por CPF', () => {
         await expect(() => getUserByCPFController({})).rejects.toThrow(
             new AppError(AppError.dependecy)
         )
+    })
+    
+    it('Deve retornar um erro do zod', async () => {
+        const httpRequest = {
+            params: {}
+        }
+
+        expect(() => getUserByCPFController({getUserByCPFUseCase, httpRequest})).rejects.toBeInstanceOf(ZodError)
     })
 })
