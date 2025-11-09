@@ -33,4 +33,26 @@ describe('Cadastrar usuario controller', () => {
             new AppError(AppError.dependecy)
         )
     })
+
+    test('Deve retornar um httpResponse 400 e erro.message se o cadastro de user n for realizado com sucesso por logica do useCase ', async () => {
+        registerUserUseCase.mockResolvedValue(Either.Left({message: 'logica_invalida'}))
+        const httpRequest = {
+            body: {
+                name: 'Patrick',
+                CPF: '11122233344',
+                address: 'Rua dos andradas',
+                phone: '51992794875',
+                email: 'andrade.patrickreis@gmail.com'
+            }
+        }
+
+        const response = await registerUserController({
+            registerUserUseCase,
+            httpRequest
+        })
+
+        expect(response).toEqual(httpResponse(400, 'logica_invalida'))
+        expect(registerUserUseCase).toHaveBeenCalledWith(httpRequest.body)
+        expect(registerUserUseCase).toHaveBeenCalledTimes(1)
+    })
 })
