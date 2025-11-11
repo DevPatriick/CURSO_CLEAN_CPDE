@@ -1,7 +1,8 @@
-const Either = require("../../../shared/errors/Either")
+const { Either, AppError } = require("../../../shared/errors/index")
 const { Right } = require("../../../shared/errors/Either")
 const httpResponse = require("../../../shared/helpers/http.response")
 const registerBookController = require("./register-book.controller")
+const { ZodError } = require("zod")
 
 
 describe('Cadastrar livro controller', () => {
@@ -46,5 +47,19 @@ describe('Cadastrar livro controller', () => {
         expect(registerBookUseCase).toHaveBeenCalledWith(httpRequest.body)
         expect(registerBookUseCase).toHaveBeenCalledTimes(1)
 
+    })
+
+    it('Deve retornar um throw AppError se o usecase e/ou httpRequest n for fornecido', async () => {
+        expect(() => registerBookController({})).rejects.toThrow(
+            new AppError(AppError.dependecy)
+        )
+    })
+
+    it('Deve retornar um erro do zodValidator', () => {
+        const httpRequest = {
+            body: {}
+        }
+
+        expect(() => registerBookController({registerBookUseCase, httpRequest})).rejects.toBeInstanceOf(ZodError)
     })
 })
