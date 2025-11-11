@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1762659998583" clover="3.2.0">
-  <project timestamp="1762659998584" name="All files">
-    <metrics statements="638" coveredstatements="634" conditionals="119" coveredconditionals="114" methods="38" coveredmethods="36" elements="795" coveredelements="784" complexity="0" loc="638" ncloc="638" packages="10" files="21" classes="21"/>
+<coverage generated="1762826052120" clover="3.2.0">
+  <project timestamp="1762826052121" name="All files">
+    <metrics statements="673" coveredstatements="669" conditionals="122" coveredconditionals="116" methods="39" coveredmethods="37" elements="834" coveredelements="822" complexity="0" loc="673" ncloc="673" packages="11" files="22" classes="22"/>
     <package name="application.book">
       <metrics statements="32" coveredstatements="32" conditionals="18" coveredconditionals="16" methods="2" coveredmethods="2"/>
       <file name="get-book-by-ISBN.usecase.js" path="C:\Users\conta\projects\src\application\book\get-book-by-ISBN.usecase.js">
@@ -572,9 +572,50 @@
         <line num="48" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="interfaces-adapters.controllers">
+    <package name="interfaces-adapters.controllers.book">
+      <metrics statements="35" coveredstatements="35" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="register-book.controller.js" path="C:\Users\conta\projects\src\interfaces-adapters\controllers\book\register-book.controller.js">
+        <metrics statements="35" coveredstatements="35" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="interfaces-adapters.controllers.user">
       <metrics statements="67" coveredstatements="67" conditionals="17" coveredconditionals="17" methods="2" coveredmethods="2"/>
-      <file name="get-user-by-CPF.controller.js" path="C:\Users\conta\projects\src\interfaces-adapters\controllers\get-user-by-CPF.controller.js">
+      <file name="get-user-by-CPF.controller.js" path="C:\Users\conta\projects\src\interfaces-adapters\controllers\user\get-user-by-CPF.controller.js">
         <metrics statements="23" coveredstatements="23" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -600,7 +641,7 @@
         <line num="22" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
       </file>
-      <file name="register-user.controller.js" path="C:\Users\conta\projects\src\interfaces-adapters\controllers\register-user.controller.js">
+      <file name="register-user.controller.js" path="C:\Users\conta\projects\src\interfaces-adapters\controllers\user\register-user.controller.js">
         <metrics statements="44" coveredstatements="44" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -655,9 +696,9 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -673,21 +714,21 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="18" count="2" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="21" count="4" type="stmt"/>
@@ -726,11 +767,11 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
       </file>
     </package>
   </project>

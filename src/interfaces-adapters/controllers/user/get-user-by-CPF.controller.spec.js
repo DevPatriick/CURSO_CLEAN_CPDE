@@ -1,6 +1,6 @@
 const { RepositoryNotTreeError } = require("typeorm");
-const { Either, AppError } = require("../../shared/errors")
-const httpResponse = require("../../shared/helpers/http.response")
+const { Either, AppError } = require("../../../shared/errors")
+const httpResponse = require("../../../shared/helpers/http.response")
 const getUserByCPFController = require("./get-user-by-CPF.controller")
 const { ZodError } = require('zod')
 

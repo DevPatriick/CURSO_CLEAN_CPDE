@@ -1,5 +1,5 @@
-const { Either, AppError } = require("../../shared/errors")
-const httpResponse = require("../../shared/helpers/http.response")
+const { Either, AppError } = require("../../../shared/errors/index")
+const httpResponse = require("../../../shared/helpers/http.response")
 const registerUserController = require("./register-user.controller")
 const { ZodError } = require('zod')
 
