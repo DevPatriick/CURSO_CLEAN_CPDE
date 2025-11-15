@@ -1,6 +1,6 @@
 const { AppError, Either } = require("../../shared/errors")
 
-module.exports = function borrowBooks({ borrowBooksRepository, emailService }) {
+module.exports = function borrowBooksUseCase({ borrowBooksRepository, emailService }) {
     if(!borrowBooksRepository || !emailService) throw new AppError(AppError.dependecy)
     return async function ({ user_id, book_id, date_borrow, date_return}){
         const checkValues = user_id && book_id && date_borrow && date_return
