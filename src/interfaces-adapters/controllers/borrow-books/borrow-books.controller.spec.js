@@ -48,4 +48,20 @@ describe('Controller borrow books', () => {
         expect(borrowBooksUseCase).toHaveBeenCalledWith(httpReqReturnUseCase.body)
         expect(borrowBooksUseCase).toHaveBeenCalledTimes(1)
     })
+
+    it('Deve retornar um Rigth.Left se já tiver um emprestimo com aquele livro', async () => {
+        borrowBooksUseCase.mockResolvedValue(Either.Left({ message: 'usuario_com_livro_emprestado'}))
+        const httpRequest = httpRequestDTO()
+
+        const response = await borrowBooksController({
+            borrowBooksUseCase,
+            httpRequest
+        })
+
+        const httpReqReturnUseCase = responseUseCaseDTO()
+
+        expect(response).toEqual(httpResponse(400, 'usuario_com_livro_emprestado'))
+        expect(borrowBooksUseCase).toHaveBeenCalledWith(httpReqReturnUseCase.body)
+        expect(borrowBooksUseCase).toHaveBeenCalledTimes(1)
+    })
 })
