@@ -1,4 +1,5 @@
-const { Either } = require("../../../shared/errors")
+const { ZodError } = require("zod")
+const { Either, AppError } = require("../../../shared/errors")
 const httpResponse = require("../../../shared/helpers/http.response")
 const returnBookController = require("./return-book.controller")
 
@@ -47,5 +48,15 @@ describe('Retornar livro Controller', () => {
         expect(returnBookUseCase).toHaveBeenCalledTimes(1)
     })
 
+    it('Deve retornar um AppError se n for passado o useCase e o httpRequest', async () => {
+        await expect(() => returnBookController({})).rejects.toThrow(new AppError(AppError.dependecy))
+    })
 
+    it('Deve retornar um erro do zodValidator', () => {
+        const httpRequest = {
+            body: {}
+        }
+
+        expect(() => returnBookController({returnBookUseCase, httpRequest})).rejects.toBeInstanceOf(ZodError)
+    })
 })
