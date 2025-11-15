@@ -1,6 +1,7 @@
-const { Either } = require("../../../shared/errors")
+const { Either, AppError } = require("../../../shared/errors")
 const httpResponse = require("../../../shared/helpers/http.response")
 const getBookByNameOrISBNController = require("./get-book-by-name-or-ISBN.controller")
+const { ZodError } = require('zod')
 
 
 describe('Buscar livro por nome ou ISBN Controller', () => {
@@ -50,5 +51,17 @@ describe('Buscar livro por nome ou ISBN Controller', () => {
         expect(response).toEqual(httpResponse(200, []))
         expect(getBookByNameOrISBNUseCase).toHaveBeenCalledWith(httpRequest.query)
         expect(getBookByNameOrISBNUseCase).toHaveBeenCalledTimes(1)
+    })
+
+    it('Deve retorn um throw AppError se o getBookByNameOrISBNUseCase e o httpRequest não forem passados', async ()=> {
+        await expect(()=> getBookByNameOrISBNController({})).rejects.toThrow(new AppError(AppError.dependecy))
+    })
+
+    it('Deve retornar um erro do zod', () => {
+        const httpRequest = {
+            query: {}
+        }
+
+        expect(() => getBookByNameOrISBNController({getBookByNameOrISBNUseCase, httpRequest})).rejects.toBeInstanceOf(ZodError)
     })
 })

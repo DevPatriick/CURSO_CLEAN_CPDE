@@ -1,3 +1,4 @@
+const { AppError } = require("../../../shared/errors")
 const httpResponse = require("../../../shared/helpers/http.response")
 const {z} = require('zod')
 
@@ -8,6 +9,8 @@ const zodValidator = z.object({
 })
 
 module.exports = getBookByNameOrISBNController = async ({getBookByNameOrISBNUseCase, httpRequest}) => {
+    const checkDepency = !getBookByNameOrISBNUseCase || !httpRequest || !httpRequest.query
+    if (checkDepency) throw new AppError(AppError.dependecy)
     const { value } = zodValidator.parse(httpRequest.query)
     const output = await getBookByNameOrISBNUseCase({value})
 

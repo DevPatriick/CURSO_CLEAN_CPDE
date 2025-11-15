@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763225348411" clover="3.2.0">
-  <project timestamp="1763225348411" name="All files">
-    <metrics statements="691" coveredstatements="687" conditionals="129" coveredconditionals="124" methods="40" coveredmethods="38" elements="860" coveredelements="849" complexity="0" loc="691" ncloc="691" packages="11" files="23" classes="23"/>
+<coverage generated="1763225894233" clover="3.2.0">
+  <project timestamp="1763225894233" name="All files">
+    <metrics statements="694" coveredstatements="690" conditionals="135" coveredconditionals="131" methods="40" coveredmethods="38" elements="869" coveredelements="859" complexity="0" loc="694" ncloc="694" packages="11" files="23" classes="23"/>
     <package name="application.book">
       <metrics statements="32" coveredstatements="32" conditionals="18" coveredconditionals="16" methods="2" coveredmethods="2"/>
       <file name="get-book-by-ISBN.usecase.js" path="C:\Users\conta\projects\src\application\book\get-book-by-ISBN.usecase.js">
@@ -169,19 +169,19 @@
       </file>
     </package>
     <package name="domain.entities">
-      <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <file name="loan.entity.js" path="C:\Users\conta\projects\src\domain\entities\loan.entity.js">
-        <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="6" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
@@ -573,9 +573,9 @@
       </file>
     </package>
     <package name="interfaces-adapters.controllers.book">
-      <metrics statements="53" coveredstatements="53" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+      <metrics statements="56" coveredstatements="56" conditionals="14" coveredconditionals="14" methods="2" coveredmethods="2"/>
       <file name="get-book-by-name-or-ISBN.controller.js" path="C:\Users\conta\projects\src\interfaces-adapters\controllers\book\get-book-by-name-or-ISBN.controller.js">
-        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <metrics statements="21" coveredstatements="21" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -585,15 +585,18 @@
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="3" type="stmt"/>
         <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
       </file>
       <file name="register-book.controller.js" path="C:\Users\conta\projects\src\interfaces-adapters\controllers\book\register-book.controller.js">
         <metrics statements="35" coveredstatements="35" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
@@ -740,8 +743,8 @@
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="13" count="2" type="stmt"/>
