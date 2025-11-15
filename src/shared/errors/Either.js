@@ -34,6 +34,6 @@ module.exports = class Either {
     }
 
     static fine(value) {
-        return `Multa por atraso R$ ${value}`
+        return Either.Right(`Multa por atraso R$ ${value}`)
     }
 }
