@@ -13,6 +13,6 @@ module.exports = getBookByNameOrISBNController = async ({getBookByNameOrISBNUseC
 
     return output.fold(
         err => httpResponse(400, err.message),
-        book => httpResponse(201, book)
+        book => httpResponse(200, book)
     )
 }

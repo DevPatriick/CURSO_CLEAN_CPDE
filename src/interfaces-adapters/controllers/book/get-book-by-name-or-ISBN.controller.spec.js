@@ -20,6 +20,8 @@ describe('Buscar livro por nome ou ISBN Controller', () => {
         }
     }
 
+    // beforeAll(() => {})
+
     const getBookByNameOrISBNUseCase = jest.fn()
 
     it('Deve retornar httpResponse 201 e o livro ao buscar livro pelo nome ou pelo ISBN', async () => {
@@ -31,7 +33,21 @@ describe('Buscar livro por nome ou ISBN Controller', () => {
             httpRequest
         })
 
-        expect(response).toEqual(httpResponse(201, bookDTO))
+        expect(response).toEqual(httpResponse(200, bookDTO))
+        expect(getBookByNameOrISBNUseCase).toHaveBeenCalledWith(httpRequest.query)
+        expect(getBookByNameOrISBNUseCase).toHaveBeenCalledTimes(1)
+    })
+
+    it('Deve retornar um array vazio caso não seja encontrado nenhum livro pelo nome ou ISBN e um httpResponse 200', async () => {
+        getBookByNameOrISBNUseCase.mockResolvedValue(Either.Right([]))
+        // const httpRequest = httpRequestDTO()
+
+        const response = await getBookByNameOrISBNController({
+            getBookByNameOrISBNUseCase,
+            httpRequest
+        })
+
+        expect(response).toEqual(httpResponse(200, []))
         expect(getBookByNameOrISBNUseCase).toHaveBeenCalledWith(httpRequest.query)
         expect(getBookByNameOrISBNUseCase).toHaveBeenCalledTimes(1)
     })
