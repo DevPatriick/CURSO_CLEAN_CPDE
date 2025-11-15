@@ -18,7 +18,7 @@ describe('Buscar livros por nome ou ISBN UseCase', () => {
                 quantity: 1,
                 author: 'Spencer Johnson',
                 gender: 'Livro de autoajuda',
-                ISBN: 123456789
+                ISBN: '123456789'
             }
         ]
 

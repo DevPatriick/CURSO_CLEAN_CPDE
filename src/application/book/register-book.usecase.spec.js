@@ -13,7 +13,7 @@ describe('Cadastro de livros', () => {
             quantity: 1,
             author: 'Spencer Johnson',
             gender: 'Livro de autoajuda',
-            ISBN: 123456789
+            ISBN: '123456789'
         }
 
         const sut = registerBookUseCase({ bookRepository })
@@ -42,7 +42,7 @@ describe('Cadastro de livros', () => {
             quantity: 1,
             author: 'Spencer Johnson',
             gender: 'Livro de autoajuda',
-            ISBN: 123456789
+            ISBN: '123456789'
         }
 
         const sut = registerBookUseCase({ bookRepository })

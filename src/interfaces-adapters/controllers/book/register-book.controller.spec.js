@@ -13,7 +13,7 @@ describe('Cadastrar livro controller', () => {
                 quantity: 1,
                 author: 'autor_livro:',
                 gender: 'genero_livro',
-                ISBN: 11122233344
+                ISBN: '11122233344'
             }
         }
     }

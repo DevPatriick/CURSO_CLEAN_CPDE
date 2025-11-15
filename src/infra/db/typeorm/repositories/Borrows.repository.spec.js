@@ -163,7 +163,7 @@ describe('Emprestimo Repository Typeorm', () => {
                 quantity: 10,
                 author: 'paqtirck',
                 gender: 'açaõ',
-                ISBN: 123456,
+                ISBN: '123456',
             }
         })
     })

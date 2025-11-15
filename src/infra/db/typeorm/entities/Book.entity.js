@@ -24,7 +24,7 @@ module.exports = new EntitySchema({
             type: 'varchar'
         },
         ISBN: {
-            type: 'int',
+            type: 'varchar',
             unique: true
         },
     }

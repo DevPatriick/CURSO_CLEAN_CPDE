@@ -17,7 +17,7 @@ describe('Livros Repository', () => {
         quantity: 2,
         author: 'Patrick',
         gender: 'Auto ajuda',
-        ISBN: 123456789
+        ISBN: '123456789'
     }
 
     test('Deve retornar void ao criar um livro', async () => {
@@ -50,10 +50,10 @@ describe('Livros Repository', () => {
 
     test('Deve retorn o livro pelo ISBN', async () => {
         await typeormBookRepository.save(bookDTO)
-        const getByName = await sut.getBookByNameOrISBN(123456789)
+        const getByName = await sut.getBookByNameOrISBN('123456789')
 
         expect(getByName).toHaveLength(1)
-        expect(getByName[0].ISBN).toBe(123456789)
+        expect(getByName[0].ISBN).toBe('123456789')
     })
 
     // test('Deve retorn null livro pelo nome', async () => {
@@ -66,13 +66,13 @@ describe('Livros Repository', () => {
     test('Deve retornar true ao buscar o livro por ISBN', async () => {
         await typeormBookRepository.save(bookDTO)
 
-        const existBookByISBN = await sut.existBookByISBN(123456789)
+        const existBookByISBN = await sut.existBookByISBN('123456789')
 
         expect(existBookByISBN).toBe(true)
     })
 
     test('Deve retornar true ao buscar o livro por ISBN', async () => {
-        const existBookByISBN = await sut.existBookByISBN(123456789)
+        const existBookByISBN = await sut.existBookByISBN('123456789')
 
         expect(existBookByISBN).toBe(false)
     })
