@@ -1,8 +1,22 @@
 const express = require('express')
 const { routes } = require('./routes')
+const { ZodError } = require('zod')
 const app = express()
 
+// express usa o formato json
 app.use(express.json())
+
+// express usa as rotas
 app.use(routes)
+
+// erro handler
+app.use((err, req, res, next) => {
+    if (err instanceof ZodError) {
+        return res.status(400).json({ message: 'Erro na validação', erros: err.flatten() })
+    }
+
+    if(process.env.NODE_ENV !== 'production') console.error(err)
+    return res.status(500).json({ message: '❌ Erro interno do servidor ❌'})
+})
 
 module.exports = {app}
