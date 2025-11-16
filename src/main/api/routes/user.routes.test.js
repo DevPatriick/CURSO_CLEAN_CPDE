@@ -61,4 +61,13 @@ describe('Usuarios routes', ()=> {
         // verifica se o objeto veio, contem!
         // expect(body).toEqual(expect.objectContaining(userDTO))
     })
+
+    it('Deve verificar se o CPF foi passada certo', async () => {
+        const {statusCode, body} = await request(app).get(`/users/cpf/1`).send()
+
+        expect(statusCode).toBe(400)
+        expect(body.erros.fieldErrors).toEqual({
+            CPF: ['Invalid input']
+        })
+    })
 })
