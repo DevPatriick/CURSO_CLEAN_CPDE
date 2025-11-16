@@ -17,6 +17,8 @@ describe('Usuarios routes', ()=> {
             address: 'Rua dos andradas',
             email: 'patrick@gmail.com',
     }
+
+    // TESTES PARA CADASTRAR USUARIO
     it('Deve ser possivel cadastrar um usuario', async () => {
         await typeormUserRepository.query('DELETE FROM "User"')
         const {statusCode, body} = await request(app).post('/users').send(userDTO)
@@ -39,6 +41,7 @@ describe('Usuarios routes', ()=> {
         })
     })
 
+    // BUSCAR USUARIO POR CPF
     it('Deve buscar um usuario por CPF', async () => {
 
         await typeormUserRepository.save(userDTO)
@@ -48,5 +51,14 @@ describe('Usuarios routes', ()=> {
         expect(body.id).toBeDefined()
         // verifica se o objeto veio, contem!
         expect(body).toEqual(expect.objectContaining(userDTO))
+    })
+
+    it('Deve retornar um array vazio por que não encontrou nenhum usuario com o CPF informado', async () => {
+        const {statusCode, body} = await request(app).get(`/users/cpf/${userDTO.CPF}`).send()
+
+        expect(statusCode).toBe(200)
+        expect(body).toBeNull()
+        // verifica se o objeto veio, contem!
+        // expect(body).toEqual(expect.objectContaining(userDTO))
     })
 })

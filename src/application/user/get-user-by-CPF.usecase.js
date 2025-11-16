@@ -5,7 +5,7 @@ module.exports = function getUserByCPFUseCase({ userRepository }){
     return async function({CPF}) {
         if(!CPF) throw new AppError(AppError.invalidCPF)
         const dataUser = await userRepository.getUserByCPF(CPF)
-        if(!dataUser) return null
-        return Either.Right(dataUser)
+
+        return dataUser ? Either.Right(dataUser) : Either.Right(null);
     }
 }
