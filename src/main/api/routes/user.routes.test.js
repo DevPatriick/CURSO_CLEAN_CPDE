@@ -6,10 +6,11 @@ const { typeormUserRepository } = require("../../../infra/db/typeorm/repositorie
 
 describe('Usuarios routes', ()=> {
 
-    beforeEach(async function () {
-        await typeormUserRepository.query('DELETE FROM "User"')
-    })
+    // beforeEach(async function () {
+    //     await typeormUserRepository.query('DELETE FROM "User"')
+    // })
     it('Deve ser possivel cadastrar um usuario', async () => {
+        await typeormUserRepository.query('DELETE FROM "User"')
         const {statusCode, body} = await request(app).post('/users').send({
             name: 'Patrick',
             CPF: '111.222.333-44',
