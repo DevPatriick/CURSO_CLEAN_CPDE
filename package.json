@@ -24,6 +24,7 @@
     "ts-jest": "^29.4.5"
   },
   "dependencies": {
+    "express": "^4.21.2",
     "typeorm": "^0.3.27",
     "zod": "^3.25.76"
   }
