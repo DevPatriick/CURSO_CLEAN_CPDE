@@ -6,24 +6,26 @@ const { typeormUserRepository } = require("../../../infra/db/typeorm/repositorie
 
 describe('Usuarios routes', ()=> {
 
-    // beforeEach(async function () {
-    //     await typeormUserRepository.query('DELETE FROM "User"')
-    // })
-    it('Deve ser possivel cadastrar um usuario', async () => {
+    beforeEach(async function () {
         await typeormUserRepository.query('DELETE FROM "User"')
-        const {statusCode, body} = await request(app).post('/users').send({
+    })
+
+    const userDTO = {
             name: 'Patrick',
             CPF: '111.222.333-44',
             phone: '51992794875',
             address: 'Rua dos andradas',
             email: 'patrick@gmail.com',
-        })
+    }
+    it('Deve ser possivel cadastrar um usuario', async () => {
+        await typeormUserRepository.query('DELETE FROM "User"')
+        const {statusCode, body} = await request(app).post('/users').send(userDTO)
 
         expect(statusCode).toBe(201)
         expect(body).toBeNull()
     })
 
-    it('Deve retornar um erro se n for enviado alguns campos obrigatórios', async ()=> {
+    it('Deve retornar um erro se n for enviado alguns campos obrigatórios', async () => {
         const {statusCode, body} = await request(app).post('/users').send({})
 
         expect(statusCode).toBe(400)
@@ -35,5 +37,16 @@ describe('Usuarios routes', ()=> {
             address: ['Endereço é obrigatório'],
             email: ['Email: é obrigatório'],
         })
+    })
+
+    it('Deve buscar um usuario por CPF', async () => {
+
+        await typeormUserRepository.save(userDTO)
+        const {statusCode, body} = await request(app).get(`/users/cpf/${userDTO.CPF}`).send()
+
+        expect(statusCode).toBe(200)
+        expect(body.id).toBeDefined()
+        // verifica se o objeto veio, contem!
+        expect(body).toEqual(expect.objectContaining(userDTO))
     })
 })

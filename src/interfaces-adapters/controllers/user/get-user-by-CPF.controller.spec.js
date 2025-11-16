@@ -26,7 +26,7 @@ describe('Buscar usuario por CPF', () => {
 
         const response = await getUserByCPFController({getUserByCPFUseCase, httpRequest})
 
-        expect(response).toEqual(httpResponse(201, userDTO))
+        expect(response).toEqual(httpResponse(200, userDTO))
         expect(getUserByCPFUseCase).toHaveBeenCalledWith(httpRequest.params)
         expect(getUserByCPFUseCase).toHaveBeenCalledTimes(1)
     })
@@ -44,7 +44,7 @@ describe('Buscar usuario por CPF', () => {
             httpRequest
         })
 
-        expect(response).toEqual(httpResponse(201, null))
+        expect(response).toEqual(httpResponse(200, null))
         expect(getUserByCPFUseCase).toHaveBeenCalledWith(httpRequest.params)
         expect(getUserByCPFUseCase).toHaveBeenCalledTimes(1)
     })

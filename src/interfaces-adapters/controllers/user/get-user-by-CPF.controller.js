@@ -10,6 +10,8 @@ const zodValidator = z.object({
 })
 
 module.exports = registerUserController = async ({ getUserByCPFUseCase, httpRequest }) => {
+    console.log('getUserByCPFUseCase', getUserByCPFUseCase)
+    console.log('httpRequest', httpRequest)
     const checkDepency = !getUserByCPFUseCase || !httpRequest || !httpRequest.params;
     if(checkDepency) throw new AppError(AppError.dependecy)
     const {CPF} = zodValidator.parse(httpRequest.params)
@@ -18,6 +20,6 @@ module.exports = registerUserController = async ({ getUserByCPFUseCase, httpRequ
 
     return output.fold(
         err => httpResponse(400, err.message),
-        (user) => httpResponse(201, user)
+        (user) => httpResponse(200, user)
     )
 }

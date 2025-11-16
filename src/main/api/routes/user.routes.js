@@ -14,9 +14,9 @@ userRoutes.post("/", async (req, res) => {
     return res.status(statusCode).json(body)
 })
 
-userRoutes.get("cpf/:cpf", async (req, res) => {
+userRoutes.get("/cpf/:CPF", async (req, res) => {
     const httpRequest = {
-        body: req.body
+        params: req.params
     }
 
     const {statusCode, body} = await getUserByCPFCompose(httpRequest)

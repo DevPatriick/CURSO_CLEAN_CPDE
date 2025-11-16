@@ -15,7 +15,7 @@ app.use((err, req, res, next) => {
         return res.status(400).json({ message: 'Erro na validação', erros: err.flatten() })
     }
 
-    if(process.env.NODE_ENV !== 'production') console.error(err)
+    if(process.env.NODE_ENV !== 'production') console.log(err)
     return res.status(500).json({ message: '❌ Erro interno do servidor ❌'})
 })
 

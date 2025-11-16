@@ -3,10 +3,9 @@ const { userRepository } = require("../../../infra/db/typeorm/repositories/User.
 const getUserByCPFController = require("../../../interfaces-adapters/controllers/user/get-user-by-CPF.controller")
 
 
-
-module.exports = getUserByCPF = async (httpRequest) => {
+module.exports = getUserByCPFCompose = async (httpRequest) => {
     const getUserByCPFUseCaseFn = getUserByCPFUsecase({ userRepository: userRepository()})
-    const controller = getUserByCPFController({ getUserByCPFUsecase: getUserByCPFUseCaseFn, httpRequest })
+    const controller = getUserByCPFController({ getUserByCPFUseCase: getUserByCPFUseCaseFn, httpRequest })
 
     return controller
 }
