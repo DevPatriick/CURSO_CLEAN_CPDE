@@ -6,8 +6,8 @@ describe('Cadastrar usuário UseCase', function(){
 
     const userRepository = {
         register: jest.fn(),
-        getUserByCPF: jest.fn(),
-        getUserByEmail: jest.fn()
+        existByCPF: jest.fn(),
+        existByEmail: jest.fn()
     }
 
     // Triplo AAA
@@ -78,8 +78,8 @@ describe('Cadastrar usuário UseCase', function(){
     })
 
     test('Deve retornar um throw AppErro CPF já cadastrado', async function(){
-        userRepository.getUserByCPF.mockResolvedValue(true)
-        userRepository.getUserByEmail.mockResolvedValue(false)
+        userRepository.existByCPF.mockResolvedValue(true)
+        userRepository.existByEmail.mockResolvedValue(false)
         const userDTO = {
             name: 'Patrick Reis Andrade',
             CPF: 55555555555,
@@ -93,16 +93,16 @@ describe('Cadastrar usuário UseCase', function(){
         expect(output.right).toBeNull()
         expect(output.left).toEqual(Either.userExist('CPF'))
         // Verifica se já existe
-        expect(userRepository.getUserByCPF).toHaveBeenLastCalledWith(userDTO.CPF)
+        expect(userRepository.existByCPF).toHaveBeenLastCalledWith(userDTO.CPF)
         // Se foi apenas uma vez
-        expect(userRepository.getUserByCPF).toHaveBeenCalledTimes(1)
+        expect(userRepository.existByCPF).toHaveBeenCalledTimes(1)
 
         // toHaveBeenLastCalledWith é um matcher do Jest usado para testar funções mock (ou spies) e verificar com quais argumentos a função foi chamada na última vez.
     })
 
     test('Deve retornar um throw AppErro email já cadastrado', async function(){
-        userRepository.getUserByCPF.mockResolvedValue(false)
-        userRepository.getUserByEmail.mockResolvedValue(true)
+        userRepository.existByCPF.mockResolvedValue(false)
+        userRepository.existByEmail.mockResolvedValue(true)
         const userDTO = {
             name: 'Patrick Reis Andrade',
             CPF: 55555555555,
@@ -116,8 +116,8 @@ describe('Cadastrar usuário UseCase', function(){
         expect(output.right).toBeNull()
         // Verifica se é igual
         expect(output.left).toEqual(Either.userExist('E-mail'))
-        expect(userRepository.getUserByEmail).toHaveBeenLastCalledWith(userDTO.email)
-        expect(userRepository.getUserByEmail).toHaveBeenCalledTimes(1)
+        expect(userRepository.existByEmail).toHaveBeenLastCalledWith(userDTO.email)
+        expect(userRepository.existByEmail).toHaveBeenCalledTimes(1)
     })
 
 })

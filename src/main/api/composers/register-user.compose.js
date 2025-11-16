@@ -3,9 +3,9 @@ const { userRepository } = require("../../../infra/db/typeorm/repositories/User.
 const registerUserController = require("../../../interfaces-adapters/controllers/user/register-user.controller")
 
 module.exports = registerUserCompose = async (httpRequest) => {
-    const userRepositoryFn = userRepository()
-    const registerUserUseCaseFn = registerUserUsecase({userRepositoryFn})
-    const controller = registerUserController({registerUserUseCaseFn, httpRequest})
+    // const userRepositoryFn = userRepository
+    const registerUserUseCaseFn = registerUserUsecase({ userRepository: userRepository() })
+    const controller = registerUserController({registerUserUseCase: registerUserUseCaseFn, httpRequest})
 
     return controller
 }

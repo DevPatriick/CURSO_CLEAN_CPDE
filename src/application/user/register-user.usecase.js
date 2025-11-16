@@ -13,10 +13,10 @@ module.exports = function registerUserUseCase({ userRepository }) {
     if (!cpfRegex.test(CPF)) throw new AppError(AppError.invalidCPF);
     if (!emailRegex.test(email)) throw new AppError(AppError.invalidEmail);
 
-    const userExistsByCPF = await userRepository.getUserByCPF(CPF)
+    const userExistsByCPF = await userRepository.existByCPF(CPF)
     if(userExistsByCPF) return Either.Left(Either.userExist('CPF'))
 
-    const userExistsByEmail = await userRepository.getUserByEmail(email)
+    const userExistsByEmail = await userRepository.existByEmail(email)
     if(userExistsByEmail) return Either.Left(Either.userExist('E-mail'))
 
     await userRepository.register({
