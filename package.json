@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node --watch ./src/main/api/server.js",
-    "test": "jest --runInBand"
+    "test": "NODE_ENV=test jest --runInBand",
+    "test:integration": "NODE_ENV=integration jest --config=jest.integration.js --runInBand"
   },
   "repository": {
     "type": "git",
