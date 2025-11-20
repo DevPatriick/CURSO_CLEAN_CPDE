@@ -4,7 +4,7 @@ const registerBookUseCase = require("./register-book.usecase")
 describe('Cadastro de livros', () => {
     const bookRepository = {
         register: jest.fn(),
-        getISBN: jest.fn()
+        existBookByISBN: jest.fn()
     }
 
     test('Deve cadastrar um livro', async () => {
@@ -35,7 +35,7 @@ describe('Cadastro de livros', () => {
     })
 
     test('Deve retornar um Either.Left.valueRegister se já existir um ISBN cadastrado para um livro', async () => {
-        bookRepository.getISBN.mockResolvedValue(true)
+        bookRepository.existBookByISBN.mockResolvedValue(true)
 
         const bookDTO = {
             name: 'Quem mexeu no meu queijo',
@@ -49,8 +49,8 @@ describe('Cadastro de livros', () => {
         const output = await sut(bookDTO)
 
         expect(output.left).toEqual(Either.ISNBExist('ISBN'))
-        expect(bookRepository.getISBN).toHaveBeenLastCalledWith(bookDTO.ISBN)
+        expect(bookRepository.existBookByISBN).toHaveBeenLastCalledWith(bookDTO.ISBN)
         // Se foi apenas uma vez
-        expect(bookRepository.getISBN).toHaveBeenCalledTimes(1)
+        expect(bookRepository.existBookByISBN).toHaveBeenCalledTimes(1)
     })
 })

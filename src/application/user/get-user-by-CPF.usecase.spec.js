@@ -1,5 +1,6 @@
 const getUserByCPFUseCase = require('./get-user-by-CPF.usecase')
 const { Either, AppError } = require("../../shared/errors");
+const { reduceRight } = require('../../tests/fixtures/get-borrow-pedding');
 
 
 describe('Buscar usuário por CPF', ()=> {
@@ -40,7 +41,7 @@ describe('Buscar usuário por CPF', ()=> {
         const sut = getUserByCPFUseCase({ userRepository })
         const output = await sut(CPFDTO)
 
-        expect(output).toBeNull()
+        expect(output.right).toBeNull()
         expect(userRepository.getUserByCPF).toHaveBeenCalledWith(CPFDTO.CPF)
         expect(userRepository.getUserByCPF).toHaveBeenCalledTimes(1)
     })

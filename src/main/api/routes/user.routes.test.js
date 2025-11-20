@@ -4,7 +4,7 @@ const { app } = require("../app")
 const { typeormUserRepository } = require("../../../infra/db/typeorm/repositories/User.repository")
 
 
-describe('Usuarios routes', ()=> {
+describe('Usuarios routes', () => {
 
     beforeEach(async function () {
         await typeormUserRepository.query('DELETE FROM "User"')

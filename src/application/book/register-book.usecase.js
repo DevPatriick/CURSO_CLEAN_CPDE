@@ -6,7 +6,7 @@ module.exports = function registerBookUseCase({ bookRepository }){
         const params = name && quantity && author && gender && ISBN
         if(!params) throw new AppError(AppError.invalidparams)
 
-        const ISBNExiste = await bookRepository.getISBN(ISBN)
+        const ISBNExiste = await bookRepository.existBookByISBN(ISBN)
         if(ISBNExiste) return Either.Left(Either.ISNBExist('ISBN'))
 
         await bookRepository.register({
