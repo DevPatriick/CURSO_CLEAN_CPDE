@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763675497380" clover="3.2.0">
-  <project timestamp="1763675497381" name="All files">
-    <metrics statements="56" coveredstatements="56" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0" elements="62" coveredelements="62" complexity="0" loc="56" ncloc="56" packages="1" files="2" classes="2"/>
+<coverage generated="1763676227014" clover="3.2.0">
+  <project timestamp="1763676227015" name="All files">
+    <metrics statements="56" coveredstatements="56" conditionals="7" coveredconditionals="7" methods="0" coveredmethods="0" elements="63" coveredelements="63" complexity="0" loc="56" ncloc="56" packages="1" files="2" classes="2"/>
     <file name="book.routes.js" path="/home/patrick/projects/src/main/api/routes/book.routes.js">
-      <metrics statements="29" coveredstatements="29" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <metrics statements="29" coveredstatements="29" conditionals="3" coveredconditionals="3" methods="0" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -11,24 +11,24 @@
       <line num="5" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="12" count="2" type="stmt"/>
-      <line num="13" count="2" type="stmt"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
       <line num="16" count="1" type="stmt"/>
       <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="18" count="2" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
-      <line num="22" count="2" type="stmt"/>
-      <line num="23" count="2" type="stmt"/>
-      <line num="24" count="2" type="stmt"/>
-      <line num="25" count="2" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="20" count="4" type="stmt"/>
+      <line num="21" count="4" type="stmt"/>
+      <line num="22" count="4" type="stmt"/>
+      <line num="23" count="3" type="cond" truecount="1" falsecount="0"/>
+      <line num="24" count="3" type="stmt"/>
+      <line num="25" count="3" type="stmt"/>
       <line num="26" count="1" type="stmt"/>
       <line num="27" count="1" type="stmt"/>
       <line num="28" count="1" type="stmt"/>

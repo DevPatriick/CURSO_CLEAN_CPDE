@@ -26,6 +26,17 @@ describe('Livros routes', () => {
 
     it('Deve retornar um livro se eu buscar por ISBN ou Nome do livro', async () => {
         await request(app).post('/books').send(bookDTO)
+        const {statusCode, body} = await request(app).get('/books/ISBNOrName').query({value: 'SQL Guia Pratico'})
+
+        const expected = [{ ...bookDTO }]
+        delete body[0].id
+
+        expect(statusCode).toBe(200)
+        expect(body).toEqual(expected)
+    })
+
+    it('Deve retornar um livro buscando pela nome', async () => {
+        await request(app).post('/books').send(bookDTO)
         const {statusCode, body} = await request(app).get('/books/ISBNOrName').query({value: '12345678910'})
 
         const expected = [{ ...bookDTO }]
@@ -41,4 +52,14 @@ describe('Livros routes', () => {
         expect(statusCode).toBe(200)
         expect(body).toEqual([])
     })
+
+    // it('Deve retornar um erro se n for enviado o nome ou o ISBN', async () => {
+    //     const {statusCode, body} = await request(app).get('/books/ISBNOrName').query({ value: ''})
+
+    //     expect(statusCode).toBe(400)
+    //     expect(body.message).toBe('Erro na validação')
+    //     expect(body.erros.fieldErrors).toEqual({
+    //         value: ['Nome ou ISBN obrigatório para buscar livro'],
+    //     })
+    // })
 })
