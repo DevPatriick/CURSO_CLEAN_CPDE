@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763793667910" clover="3.2.0">
-  <project timestamp="1763793667910" name="All files">
+<coverage generated="1763815241571" clover="3.2.0">
+  <project timestamp="1763815241572" name="All files">
     <metrics statements="104" coveredstatements="102" conditionals="14" coveredconditionals="13" methods="0" coveredmethods="0" elements="118" coveredelements="115" complexity="0" loc="104" ncloc="104" packages="1" files="3" classes="3"/>
     <file name="book.routes.js" path="/home/patrick/projects/src/main/api/routes/book.routes.js">
       <metrics statements="38" coveredstatements="38" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>

@@ -79,4 +79,9 @@ describe('Emprestar livro routes', () => {
                 ['Data de retorno obrigatória'],
         })
     })
+
+    it('Deve retornar todos os emprestimos pendentes', async () => {
+
+        
+    })
 })
