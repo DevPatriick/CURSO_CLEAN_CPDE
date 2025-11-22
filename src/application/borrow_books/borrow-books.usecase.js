@@ -19,7 +19,10 @@ module.exports = function borrowBooksUseCase({ borrowBooksRepository, emailServi
             date_return
         })
 
-        const {user, book} = await borrowBooksRepository.getBorrowById(id)
+        const {user, book} = await borrowBooksRepository.getBorrowById({id})
+
+        console.log('book>>>>>>>>>>>>>>>', book)
+        console.log('book>>>>>>>>>>>>>>>', book.book)
 
         await emailService.sendEmail({
             date_borrow,
@@ -27,7 +30,7 @@ module.exports = function borrowBooksUseCase({ borrowBooksRepository, emailServi
             name: user.name,
             CPF: user.CPF,
             email: user.email,
-            book: book.book
+            book: book.name
         })
 
         return Either.Right(null)

@@ -2,11 +2,13 @@ require('express-async-errors')
 const request  = require("supertest")
 const { app } = require("../app")
 const { typeormUserRepository } = require("../../../infra/db/typeorm/repositories/User.repository")
+const { typeormBorrowRepository } = require('../../../infra/db/typeorm/repositories/Borrows.repository')
 
 
 describe('Usuarios routes', () => {
 
     beforeEach(async function () {
+        await typeormBorrowRepository.query('DELETE FROM "Borrow"')
         await typeormUserRepository.query('DELETE FROM "User"')
     })
 

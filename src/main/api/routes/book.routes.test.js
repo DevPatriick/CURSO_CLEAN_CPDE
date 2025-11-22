@@ -1,11 +1,13 @@
 const request  = require("supertest")
 const { typeormBookRepository } = require("../../../infra/db/typeorm/repositories/Book.repository")
 const { app } = require("../app")
+const { typeormBorrowRepository } = require("../../../infra/db/typeorm/repositories/Borrows.repository")
 
 
 describe('Livros routes', () => {
 
     beforeEach(async () => {
+        await typeormBorrowRepository.query('DELETE FROM "Borrow"')
         await typeormBookRepository.query('DELETE FROM "Book"')
     })
 

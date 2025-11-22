@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763787759377" clover="3.2.0">
-  <project timestamp="1763787759377" name="All files">
+<coverage generated="1763791680466" clover="3.2.0">
+  <project timestamp="1763791680467" name="All files">
     <metrics statements="88" coveredstatements="86" conditionals="12" coveredconditionals="11" methods="0" coveredmethods="0" elements="100" coveredelements="97" complexity="0" loc="88" ncloc="88" packages="1" files="3" classes="3"/>
     <file name="book.routes.js" path="/home/patrick/projects/src/main/api/routes/book.routes.js">
       <metrics statements="38" coveredstatements="38" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
@@ -11,18 +11,18 @@
       <line num="5" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="8" count="5" type="stmt"/>
-      <line num="9" count="5" type="stmt"/>
-      <line num="10" count="5" type="stmt"/>
-      <line num="11" count="5" type="stmt"/>
-      <line num="12" count="5" type="stmt"/>
-      <line num="13" count="5" type="stmt"/>
-      <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
-      <line num="15" count="4" type="stmt"/>
-      <line num="16" count="5" type="cond" truecount="1" falsecount="0"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="11" count="4" type="stmt"/>
+      <line num="12" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="4" type="cond" truecount="1" falsecount="0"/>
       <line num="17" count="1" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
-      <line num="19" count="5" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
       <line num="21" count="1" type="stmt"/>
       <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -57,11 +57,11 @@
       <line num="10" count="1" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
-      <line num="13" count="0" type="cond" truecount="0" falsecount="1"/>
-      <line num="14" count="0" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="cond" truecount="0" falsecount="1"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
       <line num="19" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
@@ -78,14 +78,14 @@
       <line num="5" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="8" count="3" type="stmt"/>
-      <line num="9" count="3" type="stmt"/>
-      <line num="10" count="3" type="stmt"/>
-      <line num="11" count="3" type="stmt"/>
-      <line num="12" count="3" type="stmt"/>
-      <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
       <line num="16" count="1" type="stmt"/>
       <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
       <line num="18" count="3" type="stmt"/>
