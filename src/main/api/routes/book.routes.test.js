@@ -43,6 +43,7 @@ describe('Livros routes', () => {
         delete body[0].id
 
         expect(statusCode).toBe(200)
+        // ao inves de excluir uma propriedade pode ser usado dentro do toEqual o expect.objectContaining(bookDTO)
         expect(body).toEqual(expected)
     })
 
@@ -53,13 +54,33 @@ describe('Livros routes', () => {
         expect(body).toEqual([])
     })
 
-    // it('Deve retornar um erro se n for enviado o nome ou o ISBN', async () => {
-    //     const {statusCode, body} = await request(app).get('/books/ISBNOrName').query({ value: ''})
+    it('Deve retornar um erro se n for enviado os campos para cadastrar um livro', async () => {
+        const {statusCode, body} = await request(app).post('/books').send({})
 
-    //     expect(statusCode).toBe(400)
-    //     expect(body.message).toBe('Erro na validação')
-    //     expect(body.erros.fieldErrors).toEqual({
-    //         value: ['Nome ou ISBN obrigatório para buscar livro'],
-    //     })
-    // })
+        expect(statusCode).toBe(400)
+        expect(body.message).toBe('Erro na validação')
+        expect(body.erros.fieldErrors).toEqual({
+            name:
+                ['Nome do livro é obrigatório'],
+            quantity: 
+                ['Quantidade do livro é obrigatório'],
+            author:
+                ['Autor é obrigatório'],
+            gender:
+                ['Genero do livro é obrigatório'],
+            ISBN:
+                ['ISBN do livro é obrigatório']
+        })
+    })
+
+    it('Deve retornar um erro do zod se n passar valor', async () => {
+        const {statusCode, body} = await request(app).get('/books/ISBNOrName')
+
+        expect(statusCode).toBe(400)
+        expect(body.message).toBe('Erro na validação')
+        expect(body.erros.fieldErrors).toEqual({
+            value:
+                ['Nome ou ISBN obrigatório para buscar livro'],
+        })
+    })
 })
