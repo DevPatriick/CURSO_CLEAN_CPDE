@@ -51,4 +51,32 @@ describe('Emprestar livro routes', () => {
         expect(statusCode).toBe(201)
         expect(body).toBeNull()
     })
+
+    it('Deve retornar 200 e uma mensagem de multa não aplicada', async () => {
+        const book = await typeormBookRepository.save(bookDTO)
+        const user = await typeormUserRepository.save(userDTO)
+        const borrow = await typeormBorrowRepository.save({
+            book_id: book.id,
+            user_id: user.id,
+            date_borrow: '2025-11-24', 
+            date_return: '2025-11-25'
+        })
+
+        const {statusCode, body} = await request(app).put(`/borrow/return/${borrow.id}`).send({
+            date_return: '2025-11-25'
+        })
+        
+        expect(statusCode).toBe(200)
+        expect(body).toBe('Multa por atraso R$ 10')
+    })
+
+    it('Deve retornar um erro do zod', async () => {
+        const {statusCode, body} = await request(app).put(`/borrow/return/3`).send({})
+
+        expect(statusCode).toBe(400)
+        expect(body.erros.fieldErrors).toEqual({
+            date_return: 
+                ['Data de retorno obrigatória'],
+        })
+    })
 })

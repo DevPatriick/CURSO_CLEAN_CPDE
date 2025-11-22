@@ -3,7 +3,7 @@ const httpResponse = require("../../../shared/helpers/http.response")
 const { z } = require('zod')
 
 const zodValidatorParams = z.object({
-    borrow_id: z.number({
+    id: z.string({
         required_error: 'Id do livro obrigatório'
     })
 })
@@ -19,7 +19,9 @@ module.exports = returnBookController = async ({returnBookUseCase, httpRequest})
     if (checkDepency) throw new AppError(AppError.dependecy)
 
     const { date_return } = zodValidatorBody.parse(httpRequest.body)
-    const { borrow_id } = zodValidatorParams.parse(httpRequest.params)
+    const { id } = zodValidatorParams.parse(httpRequest.params)
+
+    const borrow_id = Number(id)
     const output = await returnBookUseCase({
         borrow_id,
         date_return : new Date(date_return)

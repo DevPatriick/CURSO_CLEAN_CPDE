@@ -17,11 +17,9 @@ const nodemailerService = () => {
                 pass: "020a6861d3a8eaab1017edad132326d1"
             }
         })
-
-        console.log('dentro do email', book)
         
-        const date_borrow_BR = new Date(date_borrow).toLocaleDateString('pt-BR')
-        const date_return_BR = new Date(date_return).toLocaleDateString('pt-BR')
+        const date_borrow_BR = new Date(date_borrow).toLocaleDateString('pt-BR', { timeZone: 'UTC'})
+        const date_return_BR = new Date(date_return).toLocaleDateString('pt-BR', { timeZone: 'UTC'})
         const htmlBody = `
             <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f4f6f8; padding:24px;">
             <tr>

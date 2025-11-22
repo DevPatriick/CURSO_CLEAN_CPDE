@@ -21,8 +21,6 @@ module.exports = function borrowBooksUseCase({ borrowBooksRepository, emailServi
 
         const {user, book} = await borrowBooksRepository.getBorrowById({id})
 
-        console.log('book>>>>>>>>>>>>>>>', book)
-        console.log('book>>>>>>>>>>>>>>>', book.book)
 
         await emailService.sendEmail({
             date_borrow,
