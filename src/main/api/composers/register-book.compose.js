@@ -4,7 +4,9 @@ const registerBookController = require("../../../interfaces-adapters/controllers
 
 const registerBookCompose = async (httpRequest) => {
     const registerBookRepositoryCompose = bookRepository()
-    const registerBookUseCaseCompose = registerBookUsecase({bookRepository: registerBookRepositoryCompose})
+    const registerBookUseCaseCompose = registerBookUsecase({
+        bookRepository: registerBookRepositoryCompose
+    })
     const controller = registerBookController({registerBookUseCase: registerBookUseCaseCompose, httpRequest})
 
     return controller
