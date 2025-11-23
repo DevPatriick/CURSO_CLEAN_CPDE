@@ -21,9 +21,9 @@ module.exports = returnBookController = async ({returnBookUseCase, httpRequest})
     const { date_return } = zodValidatorBody.parse(httpRequest.body)
     const { id } = zodValidatorParams.parse(httpRequest.params)
 
-    const borrow_id = Number(id)
+    // const borrow_id = Number(id)
     const output = await returnBookUseCase({
-        borrow_id,
+        id,
         date_return : new Date(date_return)
     })
 

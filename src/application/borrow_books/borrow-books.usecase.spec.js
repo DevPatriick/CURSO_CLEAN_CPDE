@@ -23,7 +23,7 @@ describe('Emprestar livro UseCase', ()=> {
                 email: 'andrade.patrickreis@gmail.com',
             },
             book: {
-                book: 'qualquer coisa' 
+                name: 'qualquer coisa' 
             }
 
         })

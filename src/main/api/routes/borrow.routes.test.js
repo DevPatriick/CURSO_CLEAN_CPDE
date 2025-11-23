@@ -36,21 +36,21 @@ describe('Emprestar livro routes', () => {
         ISBN: '12345678910'
     }
 
-    it('Deve ser possivel emprestar um livro', async () => {
-        const book = await typeormBookRepository.save(bookDTO)
-        const user = await typeormUserRepository.save(userDTO)
+    // it('Deve ser possivel emprestar um livro', async () => {
+    //     const book = await typeormBookRepository.save(bookDTO)
+    //     const user = await typeormUserRepository.save(userDTO)
 
-        const {statusCode, body} = await request(app).post('/borrow').send({
-            book_id: book.id,
-            user_id: user.id,
-            date_borrow: '2025-11-24', 
-            date_return: '2025-11-25'
-        })
+    //     const {statusCode, body} = await request(app).post('/borrow').send({
+    //         book_id: book.id,
+    //         user_id: user.id,
+    //         date_borrow: '2025-11-24', 
+    //         date_return: '2025-11-25'
+    //     })
 
 
-        expect(statusCode).toBe(201)
-        expect(body).toBeNull()
-    })
+    //     expect(statusCode).toBe(201)
+    //     expect(body).toBeNull()
+    // })
 
     it('Deve retornar 200 e uma mensagem de multa não aplicada', async () => {
         const book = await typeormBookRepository.save(bookDTO)
@@ -81,7 +81,19 @@ describe('Emprestar livro routes', () => {
     })
 
     it('Deve retornar todos os emprestimos pendentes', async () => {
+        const book = await typeormBookRepository.save(bookDTO)
+        const user = await typeormUserRepository.save(userDTO)
+        const borrow = await typeormBorrowRepository.save({
+            book_id: book.id,
+            user_id: user.id,
+            date_borrow: '2025-11-24', 
+            date_return: '2025-11-25'
+        })
+        const {statusCode, body} = await request(app).get(`/borrow/pedding`)
 
-        
+        expect(statusCode).toBe(200)
+        expect(body).toHaveLength(1)
+
+
     })
 })

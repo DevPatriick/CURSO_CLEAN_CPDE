@@ -34,13 +34,13 @@ borrowRoutes.put('/return/:id', async (req, res, next) => {
     }
 })
 
-borrowRoutes.get('/borrow/pedding', async (req, res, next) => {
+borrowRoutes.get('/pedding', async (req, res, next) => {
     try {
-        const {statusCode, body} = await borrowPeddingCompose()
+        const {statusCode, body} = await borrowPeddingCompose();
 
         return res.status(statusCode).json(body)
     } catch (error) {
-        
+        return next(error)
     }
 })
 

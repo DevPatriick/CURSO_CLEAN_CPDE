@@ -107,7 +107,7 @@ describe('Emprestimo Repository Typeorm', () => {
             },
         ])
 
-        const borrowPedding = await sut.getPeddingBookWithUser()
+        const borrowPedding = await sut.getBorrowPedding()
 
         expect(borrowPedding).toHaveLength(4)
     })

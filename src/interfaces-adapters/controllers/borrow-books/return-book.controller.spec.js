@@ -12,7 +12,7 @@ describe('Retornar livro Controller', () => {
                 date_return: "2025-10-13"
             },
             params: {
-                borrow_id: 1
+                id: '1'
             }
         }
     }

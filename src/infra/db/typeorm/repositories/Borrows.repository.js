@@ -26,7 +26,7 @@ const borrowRepository = () => {
         return {date_return: record.date_return}
     }
 
-    const getPeddingBookWithUser = async () => {
+    const getBorrowPedding = async () => {
         const borrowPedding = await typeormBorrowRepository.find({
             where: {
                 date_devolution: IsNull()
@@ -95,7 +95,7 @@ const borrowRepository = () => {
     return {
         borrow,
         return: returno,
-        getPeddingBookWithUser,
+        getBorrowPedding,
         userBorrowISBNExist,
         getBorrowById
     }
