@@ -1,130 +1,561 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763907159610" clover="3.2.0">
-  <project timestamp="1763907159610" name="All files">
-    <metrics statements="115" coveredstatements="101" conditionals="14" coveredconditionals="13" methods="0" coveredmethods="0" elements="129" coveredelements="114" complexity="0" loc="115" ncloc="115" packages="1" files="3" classes="3"/>
-    <file name="book.routes.js" path="/home/patrick/projects/src/main/api/routes/book.routes.js">
-      <metrics statements="38" coveredstatements="38" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="8" count="4" type="stmt"/>
-      <line num="9" count="4" type="stmt"/>
-      <line num="10" count="4" type="stmt"/>
-      <line num="11" count="4" type="stmt"/>
-      <line num="12" count="4" type="stmt"/>
-      <line num="13" count="4" type="stmt"/>
-      <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
-      <line num="15" count="3" type="stmt"/>
-      <line num="16" count="4" type="cond" truecount="1" falsecount="0"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="4" type="stmt"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="23" count="4" type="stmt"/>
-      <line num="24" count="4" type="stmt"/>
-      <line num="25" count="4" type="stmt"/>
-      <line num="26" count="4" type="stmt"/>
-      <line num="27" count="4" type="stmt"/>
-      <line num="28" count="4" type="stmt"/>
-      <line num="29" count="3" type="cond" truecount="1" falsecount="0"/>
-      <line num="30" count="3" type="stmt"/>
-      <line num="31" count="4" type="cond" truecount="1" falsecount="0"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="33" count="1" type="stmt"/>
-      <line num="34" count="4" type="stmt"/>
-      <line num="35" count="1" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="37" count="1" type="stmt"/>
-      <line num="38" count="1" type="stmt"/>
-    </file>
-    <file name="borrow.routes.js" path="/home/patrick/projects/src/main/api/routes/borrow.routes.js">
-      <metrics statements="50" coveredstatements="36" conditionals="4" coveredconditionals="3" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="0" type="stmt"/>
-      <line num="10" count="0" type="stmt"/>
-      <line num="11" count="0" type="stmt"/>
-      <line num="12" count="0" type="stmt"/>
-      <line num="13" count="0" type="stmt"/>
-      <line num="14" count="0" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
-      <line num="16" count="0" type="stmt"/>
-      <line num="17" count="0" type="stmt"/>
-      <line num="18" count="0" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="23" count="2" type="stmt"/>
-      <line num="24" count="2" type="stmt"/>
-      <line num="25" count="2" type="stmt"/>
-      <line num="26" count="2" type="stmt"/>
-      <line num="27" count="2" type="stmt"/>
-      <line num="28" count="2" type="stmt"/>
-      <line num="29" count="2" type="stmt"/>
-      <line num="30" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="33" count="1" type="stmt"/>
-      <line num="34" count="1" type="stmt"/>
-      <line num="35" count="2" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="37" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="38" count="1" type="stmt"/>
-      <line num="39" count="1" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
-      <line num="41" count="1" type="stmt"/>
-      <line num="42" count="1" type="cond" truecount="0" falsecount="1"/>
-      <line num="43" count="0" type="stmt"/>
-      <line num="44" count="0" type="stmt"/>
-      <line num="45" count="1" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
-      <line num="47" count="1" type="stmt"/>
-      <line num="48" count="1" type="stmt"/>
-      <line num="49" count="1" type="stmt"/>
-      <line num="50" count="1" type="stmt"/>
-    </file>
-    <file name="user.routes.js" path="/home/patrick/projects/src/main/api/routes/user.routes.js">
-      <metrics statements="27" coveredstatements="27" conditionals="4" coveredconditionals="4" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="12" count="2" type="stmt"/>
-      <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="18" count="3" type="stmt"/>
-      <line num="19" count="3" type="stmt"/>
-      <line num="20" count="3" type="stmt"/>
-      <line num="21" count="3" type="stmt"/>
-      <line num="22" count="3" type="stmt"/>
-      <line num="23" count="2" type="cond" truecount="1" falsecount="0"/>
-      <line num="24" count="2" type="stmt"/>
-      <line num="25" count="2" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
-    </file>
+<coverage generated="1763907357980" clover="3.2.0">
+  <project timestamp="1763907357980" name="All files">
+    <metrics statements="477" coveredstatements="477" conditionals="122" coveredconditionals="120" methods="16" coveredmethods="16" elements="615" coveredelements="613" complexity="0" loc="477" ncloc="477" packages="8" files="18" classes="18"/>
+    <package name="application.book">
+      <metrics statements="32" coveredstatements="32" conditionals="18" coveredconditionals="16" methods="2" coveredmethods="2"/>
+      <file name="get-book-by-ISBN.usecase.js" path="/home/patrick/projects/src/application/book/get-book-by-ISBN.usecase.js">
+        <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+      <file name="register-book.usecase.js" path="/home/patrick/projects/src/application/book/register-book.usecase.js">
+        <metrics statements="21" coveredstatements="21" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="5" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="7" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="application.borrow_books">
+      <metrics statements="63" coveredstatements="63" conditionals="23" coveredconditionals="23" methods="3" coveredmethods="3"/>
+      <file name="borrow-books.usecase.js" path="/home/patrick/projects/src/application/borrow_books/borrow-books.usecase.js">
+        <metrics statements="36" coveredstatements="36" conditionals="13" coveredconditionals="13" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="4" type="cond" truecount="3" falsecount="0"/>
+        <line num="7" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
+      </file>
+      <file name="get-borrows.usecase.js" path="/home/patrick/projects/src/application/borrow_books/get-borrows.usecase.js">
+        <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+      <file name="return-book.usecase.js" path="/home/patrick/projects/src/application/borrow_books/return-book.usecase.js">
+        <metrics statements="18" coveredstatements="18" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="application.user">
+      <metrics statements="42" coveredstatements="42" conditionals="25" coveredconditionals="25" methods="2" coveredmethods="2"/>
+      <file name="get-user-by-CPF.usecase.js" path="/home/patrick/projects/src/application/user/get-user-by-CPF.usecase.js">
+        <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+      <file name="register-user.usecase.js" path="/home/patrick/projects/src/application/user/register-user.usecase.js">
+        <metrics statements="31" coveredstatements="31" conditionals="17" coveredconditionals="17" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="domain.entities">
+      <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+      <file name="loan.entity.js" path="/home/patrick/projects/src/domain/entities/loan.entity.js">
+        <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="infra.db.typeorm.entities">
+      <metrics statements="113" coveredstatements="113" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Book.entity.js" path="/home/patrick/projects/src/infra/db/typeorm/entities/Book.entity.js">
+        <metrics statements="31" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+      <file name="Borrow.entity.js" path="/home/patrick/projects/src/infra/db/typeorm/entities/Borrow.entity.js">
+        <metrics statements="51" coveredstatements="51" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+      <file name="User.entity.js" path="/home/patrick/projects/src/infra/db/typeorm/entities/User.entity.js">
+        <metrics statements="31" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="interfaces-adapters.controllers.book">
+      <metrics statements="57" coveredstatements="57" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
+      <file name="get-book-by-name-or-ISBN.controller.js" path="/home/patrick/projects/src/interfaces-adapters/controllers/book/get-book-by-name-or-ISBN.controller.js">
+        <metrics statements="21" coveredstatements="21" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+      <file name="register-book.controller.js" path="/home/patrick/projects/src/interfaces-adapters/controllers/book/register-book.controller.js">
+        <metrics statements="36" coveredstatements="36" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="interfaces-adapters.controllers.borrow-books">
+      <metrics statements="85" coveredstatements="85" conditionals="18" coveredconditionals="18" methods="3" coveredmethods="3"/>
+      <file name="borrow-books.controller.js" path="/home/patrick/projects/src/interfaces-adapters/controllers/borrow-books/borrow-books.controller.js">
+        <metrics statements="37" coveredstatements="37" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="32" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+      </file>
+      <file name="get-borrow-pedding.controller.js" path="/home/patrick/projects/src/interfaces-adapters/controllers/borrow-books/get-borrow-pedding.controller.js">
+        <metrics statements="15" coveredstatements="15" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+      <file name="return-book.controller.js" path="/home/patrick/projects/src/interfaces-adapters/controllers/borrow-books/return-book.controller.js">
+        <metrics statements="33" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="interfaces-adapters.controllers.user">
+      <metrics statements="67" coveredstatements="67" conditionals="17" coveredconditionals="17" methods="2" coveredmethods="2"/>
+      <file name="get-user-by-CPF.controller.js" path="/home/patrick/projects/src/interfaces-adapters/controllers/user/get-user-by-CPF.controller.js">
+        <metrics statements="23" coveredstatements="23" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+      <file name="register-user.controller.js" path="/home/patrick/projects/src/interfaces-adapters/controllers/user/register-user.controller.js">
+        <metrics statements="44" coveredstatements="44" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="42" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
