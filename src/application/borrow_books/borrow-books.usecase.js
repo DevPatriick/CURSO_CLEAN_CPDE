@@ -1,3 +1,4 @@
+const { sendMailQueue } = require("../../infra/queue/bull")
 const { AppError, Either } = require("../../shared/errors")
 
 module.exports = function borrowBooksUseCase({ borrowBooksRepository, emailService }) {
@@ -22,13 +23,20 @@ module.exports = function borrowBooksUseCase({ borrowBooksRepository, emailServi
         const {user, book} = await borrowBooksRepository.getBorrowById({id})
 
 
-        await emailService.sendEmail({
+        // await emailService.sendEmail({
+        //     date_borrow,
+        //     date_return,
+        //     name: user.name,
+        //     CPF: user.CPF,
+        //     email: user.email,
+        //     book: book.name
+        // })
+
+        await sendMailQueue.add({
             date_borrow,
             date_return,
-            name: user.name,
-            CPF: user.CPF,
-            email: user.email,
-            book: book.name
+            book,
+            user
         })
 
         return Either.Right(null)

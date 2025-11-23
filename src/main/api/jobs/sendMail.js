@@ -10,6 +10,7 @@ module.exports = {
             user
         } = data
 
+        console.log(`Rodando fila...`)
         await nodemailerService().sendEmail({
             date_borrow,
             date_return,
