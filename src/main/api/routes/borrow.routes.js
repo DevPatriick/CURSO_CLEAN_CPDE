@@ -10,7 +10,8 @@ borrowRoutes.post('/', async (req, res, next) => {
         const httpRequest = {
             body: req.body
         }
-
+        
+        console.log('httpRequest', httpRequest)
         const { statusCode, body } = await borrowBookCompose(httpRequest)
 
         return res.status(statusCode).json(body)

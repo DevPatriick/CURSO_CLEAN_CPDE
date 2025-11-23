@@ -1,0 +1,27 @@
+
+# @baseUurl = http://localhost:3000
+
+
+### Criar um empréstimo de livro
+POST http://localhost:3000/borrow
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "book_id": 1,
+    "date_borrow": "2025-12-10",
+    "date_return": "2025-12-15"
+}
+
+
+### Devolver um livro
+PUT http://localhost:3000/borrow/return/4
+Content-Type: application/json
+
+{
+    "date_return": "2025-12-20"
+}
+
+
+### Listar empréstimos pendentes
+GET http://localhost:3000/borrow/pedding

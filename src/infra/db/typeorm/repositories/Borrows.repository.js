@@ -16,7 +16,7 @@ const borrowRepository = () => {
 
     const returno = async ({borrow_id, date_return}) => {
         await typeormBorrowRepository.update(borrow_id, {
-            date_return
+            date_devolution: date_return
         })
 
         const record  = await typeormBorrowRepository.findOneBy({

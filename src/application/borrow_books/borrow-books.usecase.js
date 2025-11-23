@@ -5,12 +5,12 @@ module.exports = function borrowBooksUseCase({ borrowBooksRepository, emailServi
     return async function ({ user_id, book_id, date_borrow, date_return}){
         const checkValues = user_id && book_id && date_borrow && date_return
         if(!checkValues) throw new AppError(AppError.invalidparams)
-        if(date_borrow.getTime() > date_return.getTime()) return Either.Left(Either.dateReturnInvalid)
-        const userBorrowISBNExist = await borrowBooksRepository.userBorrowISBNExist({
+        if(date_borrow.getTime() > date_return.getTime()) return Either.Left(new AppError("Data de retorno inválida"))
+        const userBorrowISBNExist = await borrowBooksRepository.userBorrowISBNExist({ 
             user_id,
             book_id
         })
-        if(userBorrowISBNExist) return Either.Left(Either.userWithISBNBorrow)
+        if(userBorrowISBNExist) return Either.Left(new AppError("Usuário já possui este livro emprestado"))
 
         const id = await borrowBooksRepository.borrow({
             user_id,

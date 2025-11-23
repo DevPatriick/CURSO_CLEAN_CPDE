@@ -1,0 +1,19 @@
+
+
+### Criar usuário
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Patrick",
+  "CPF": "123.456.789-00",
+  "address": "Rua Teste, 123",
+  "phone": "11999999999",
+  "email": "patrick@email.com"
+}
+
+
+### Buscar usuário pelo CPF
+GET http://localhost:3000/users/cpf/123.456.789-00
+Content-Type: application/json
+

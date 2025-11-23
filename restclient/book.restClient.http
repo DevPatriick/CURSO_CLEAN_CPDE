@@ -1,0 +1,18 @@
+
+### Cria um livro
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "name": "SQL Guia Prático",
+  "quantity": 10,
+  "author": "Patrick Andrade",
+  "gender": "Tecnologia",
+  "ISBN": "12345678910"
+}
+
+
+### Buscar livro pelo ISBN ou Nome
+GET http://localhost:3000/books/ISBNOrName?value=SQL%20Guia%20Prático
+Content-Type: application/json
+
