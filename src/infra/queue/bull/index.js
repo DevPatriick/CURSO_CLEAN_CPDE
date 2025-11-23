@@ -9,6 +9,12 @@ const sendMailQueue = new Queue(sendMail.key, {
     }
 })
 
+console.log('✅ Server queue ready ✅')
+
+// sendMailQueue.on('failed', (job) => {
+//     console.log(job)
+// })
+
 module.exports = {
     sendMailQueue
 }

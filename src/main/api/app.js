@@ -3,6 +3,18 @@ const { routes } = require('./routes')
 const { ZodError } = require('zod')
 const { typeormServer } = require('../../infra/db/typeorm/setup')
 const app = express()
+const { createBullBoard } = require('@bull-board/api')
+const { BullAdapter } = require('@bull-board/api/bullAdapter')
+const { ExpressAdapter } = require('@bull-board/express')
+const { sendMailQueue } = require('../../infra/queue/bull')
+
+// queue monitor
+const serverAdapter = new ExpressAdapter()
+serverAdapter.setBasePath('/queues')
+createBullBoard({
+    queues: [ new BullAdapter(sendMailQueue)],
+    serverAdapter
+})
 
 // express usa o formato json
 app.use(express.json())
@@ -12,6 +24,8 @@ typeormServer.initialize().then(() => {
     console.log('Initialize typeorm...')
     // express usa as rotas
     app.use(routes)
+
+    app.use('/queues', serverAdapter.getRouter())
     
     // erro handler
     app.use((err, req, res, next) => {

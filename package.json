@@ -6,7 +6,8 @@
     "start": "node --watch ./src/main/api/server.js",
     "test": "NODE_ENV=test jest --runInBand",
     "test:integration": "NODE_ENV=integration jest --config=jest.integration.js --runInBand",
-    "test:all": "npm test && npm run test:integration"
+    "test:all": "npm test && npm run test:integration",
+    "queue": "node --watch src/infra/queue/bull/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "ts-jest": "^29.4.5"
   },
   "dependencies": {
+    "@bull-board/express": "^5.23.0",
     "bull": "^4.16.5",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
