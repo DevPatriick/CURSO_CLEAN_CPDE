@@ -12,7 +12,7 @@ describe('Retornar livro Controller', () => {
                 date_return: "2025-10-13"
             },
             params: {
-                id: '1'
+                id: 1
             }
         }
     }
@@ -43,7 +43,7 @@ describe('Retornar livro Controller', () => {
         expect(response).toEqual(httpResponse(200, 'Multa por atraso R$ 0'))
         expect(returnBookUseCase).toHaveBeenCalledWith({
             ...httpReq.body,
-            ...httpRequest.params
+            borrow_id: httpRequest.params.id
         })
         expect(returnBookUseCase).toHaveBeenCalledTimes(1)
     })
