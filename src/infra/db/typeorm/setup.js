@@ -25,6 +25,17 @@ if (process.env.NODE_ENV === 'test') {
         password: 'postgres',
         entities: [user, book, borrow]
     })
+} else {
+    typeormServer = new typeorm.DataSource({
+        type: 'postgres',
+        host: 'localhost',
+        database: 'library',
+        synchronize: false,
+        port: 5432,
+        username: 'postgres',
+        password: 'postgres',
+        entities: [user, book, borrow]
+    })
 }
 
 
