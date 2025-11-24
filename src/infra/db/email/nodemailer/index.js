@@ -10,11 +10,11 @@ const nodemailerService = () => {
         book
     }) => {
         const transporter = nodemailer.createTransport({
-            host: 'live.smtp.mailtrap.io',
-            port: 2525,
+            host: process.env.NODEMAILER_HOST,
+            port: process.env.NODEMAILER_PORT,
             auth: {
-                user: "smtp@mailtrap.io",
-                pass: "020a6861d3a8eaab1017edad132326d1"
+                user: process.env.NODEMAILER_USER,
+                pass: process.env.NODEMAILER_PASS
             }
         })
         

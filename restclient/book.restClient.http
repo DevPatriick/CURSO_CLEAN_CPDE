@@ -4,15 +4,15 @@ POST http://localhost:3000/books
 Content-Type: application/json
 
 {
-  "name": "SQL Guia Prático",
+  "name": "As Cronicas de Narnia",
   "quantity": 10,
-  "author": "Patrick Andrade",
-  "gender": "Tecnologia",
-  "ISBN": "12345678910"
+  "author": "Alaiane Rocha Silva",
+  "gender": "Fantasia",
+  "ISBN": "12345678911"
 }
 
 
 ### Buscar livro pelo ISBN ou Nome
-GET http://localhost:3000/books/ISBNOrName?value=SQL%20Guia%20Prático
+GET http://localhost:3000/books/ISBNOrName?value=12345678911
 Content-Type: application/json
 

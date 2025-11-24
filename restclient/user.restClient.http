@@ -5,15 +5,15 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Patrick",
-  "CPF": "123.456.789-00",
+  "name": "Alaiane",
+  "CPF": "042.969.960-37",
   "address": "Rua Teste, 123",
-  "phone": "11999999999",
-  "email": "patrick@email.com"
+  "phone": "51983198425",
+  "email": "alaiane.rocha.silva@outlook.com"
 }
 
 
 ### Buscar usuário pelo CPF
-GET http://localhost:3000/users/cpf/123.456.789-00
+GET http://localhost:3000/users/cpf/042.969.960-37
 Content-Type: application/json
 

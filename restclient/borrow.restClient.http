@@ -7,15 +7,15 @@ POST http://localhost:3000/borrow
 Content-Type: application/json
 
 {
-    "user_id": 1,
-    "book_id": 1,
-    "date_borrow": "2025-12-10",
+    "user_id": 3,
+    "book_id": 2,
+    "date_borrow": "2025-11-23",
     "date_return": "2025-12-15"
 }
 
 
 ### Devolver um livro
-PUT http://localhost:3000/borrow/return/5
+PUT http://localhost:3000/borrow/return/7
 Content-Type: application/json
 
 {

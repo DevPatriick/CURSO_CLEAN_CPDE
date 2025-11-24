@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763907357980" clover="3.2.0">
-  <project timestamp="1763907357980" name="All files">
-    <metrics statements="477" coveredstatements="477" conditionals="122" coveredconditionals="120" methods="16" coveredmethods="16" elements="615" coveredelements="613" complexity="0" loc="477" ncloc="477" packages="8" files="18" classes="18"/>
+<coverage generated="1763944585957" clover="3.2.0">
+  <project timestamp="1763944585959" name="All files">
+    <metrics statements="485" coveredstatements="485" conditionals="122" coveredconditionals="120" methods="16" coveredmethods="16" elements="623" coveredelements="621" complexity="0" loc="485" ncloc="485" packages="8" files="18" classes="18"/>
     <package name="application.book">
       <metrics statements="32" coveredstatements="32" conditionals="18" coveredconditionals="16" methods="2" coveredmethods="2"/>
       <file name="get-book-by-ISBN.usecase.js" path="/home/patrick/projects/src/application/book/get-book-by-ISBN.usecase.js">
@@ -44,23 +44,23 @@
       </file>
     </package>
     <package name="application.borrow_books">
-      <metrics statements="63" coveredstatements="63" conditionals="23" coveredconditionals="23" methods="3" coveredmethods="3"/>
+      <metrics statements="71" coveredstatements="71" conditionals="23" coveredconditionals="23" methods="3" coveredmethods="3"/>
       <file name="borrow-books.usecase.js" path="/home/patrick/projects/src/application/borrow_books/borrow-books.usecase.js">
-        <metrics statements="36" coveredstatements="36" conditionals="13" coveredconditionals="13" methods="1" coveredmethods="1"/>
+        <metrics statements="44" coveredstatements="44" conditionals="13" coveredconditionals="13" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="6" count="4" type="cond" truecount="3" falsecount="0"/>
-        <line num="7" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="2" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="4" type="cond" truecount="3" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
@@ -82,7 +82,15 @@
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
       </file>
       <file name="get-borrows.usecase.js" path="/home/patrick/projects/src/application/borrow_books/get-borrows.usecase.js">
         <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>

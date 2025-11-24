@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv/config')
 const { routes } = require('./routes')
 const { ZodError } = require('zod')
 const { typeormServer } = require('../../infra/db/typeorm/setup')
